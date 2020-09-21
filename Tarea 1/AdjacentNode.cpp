@@ -1,21 +1,23 @@
 //
-// Created by luispedro on 21/9/20.
+// Created by Luis Pedro Morales on 21/9/20.
 //
 
 #include "AdjacentNode.h"
 
-/*!
- * Constructor method
- * @param name
- */
-AdjacentNode::AdjacentNode(string name) {
-    this->name = name;
+AdjacentNode::AdjacentNode(Vertex *vertex) {
+    this->name = vertex->GetName();
 }
 
-void AdjacentNode::SetNextNode(AdjacentNode *pNextNode) { this->pNextNode = pNextNode; }
+AdjacentNode::~AdjacentNode() {}
 
-string AdjacentNode::GetName() { return this->name; }
+string AdjacentNode::GetName() {
+    return this->name;
+}
 
-AdjacentNode *AdjacentNode::GetNextNode() { return this->pNextNode; }
+AdjacentNode *AdjacentNode::GetNext() {
+    return this->pNext;
+}
 
-AdjacentNode::~AdjacentNode() {};
+void AdjacentNode::SetNext(AdjacentNode *pNext) {
+    this->pNext = pNext;
+}

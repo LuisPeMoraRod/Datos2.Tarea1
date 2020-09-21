@@ -143,6 +143,33 @@ Tarea_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/build
 .PHONY : Tarea_1/fast
 
+AdjNodesList.o: AdjNodesList.cpp.o
+
+.PHONY : AdjNodesList.o
+
+# target to build an object file
+AdjNodesList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o
+.PHONY : AdjNodesList.cpp.o
+
+AdjNodesList.i: AdjNodesList.cpp.i
+
+.PHONY : AdjNodesList.i
+
+# target to preprocess a source file
+AdjNodesList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.i
+.PHONY : AdjNodesList.cpp.i
+
+AdjNodesList.s: AdjNodesList.cpp.s
+
+.PHONY : AdjNodesList.s
+
+# target to generate assembly for a file
+AdjNodesList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.s
+.PHONY : AdjNodesList.cpp.s
+
 AdjacentNode.o: AdjacentNode.cpp.o
 
 .PHONY : AdjacentNode.o
@@ -169,33 +196,6 @@ AdjacentNode.s: AdjacentNode.cpp.s
 AdjacentNode.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.s
 .PHONY : AdjacentNode.cpp.s
-
-AdjacentNodesList.o: AdjacentNodesList.cpp.o
-
-.PHONY : AdjacentNodesList.o
-
-# target to build an object file
-AdjacentNodesList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.o
-.PHONY : AdjacentNodesList.cpp.o
-
-AdjacentNodesList.i: AdjacentNodesList.cpp.i
-
-.PHONY : AdjacentNodesList.i
-
-# target to preprocess a source file
-AdjacentNodesList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.i
-.PHONY : AdjacentNodesList.cpp.i
-
-AdjacentNodesList.s: AdjacentNodesList.cpp.s
-
-.PHONY : AdjacentNodesList.s
-
-# target to generate assembly for a file
-AdjacentNodesList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.s
-.PHONY : AdjacentNodesList.cpp.s
 
 Vertex.o: Vertex.cpp.o
 
@@ -287,12 +287,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Tarea_1"
+	@echo "... AdjNodesList.o"
+	@echo "... AdjNodesList.i"
+	@echo "... AdjNodesList.s"
 	@echo "... AdjacentNode.o"
 	@echo "... AdjacentNode.i"
 	@echo "... AdjacentNode.s"
-	@echo "... AdjacentNodesList.o"
-	@echo "... AdjacentNodesList.i"
-	@echo "... AdjacentNodesList.s"
 	@echo "... Vertex.o"
 	@echo "... Vertex.i"
 	@echo "... Vertex.s"

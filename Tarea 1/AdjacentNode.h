@@ -1,5 +1,5 @@
 //
-// Created by Luis Pedro Morales Rodriguez on 21/9/20.
+// Created by luispedro on 21/9/20.
 //
 
 #pragma once
@@ -10,13 +10,15 @@ using namespace std;
 class AdjacentNode {
 private:
     string name;
-    AdjacentNode* pNextNode;
+    AdjacentNode* pNext;
 public:
-    AdjacentNode(string name);
-    void SetNextNode(AdjacentNode* pNextNode);
-    string GetName();
-    AdjacentNode* GetNextNode();
+    AdjacentNode(Vertex* vertex);
     ~AdjacentNode();
+
+    string GetName();
+    AdjacentNode* GetNext();
+    void SetNext(AdjacentNode* pNext);
+
 };
 
 

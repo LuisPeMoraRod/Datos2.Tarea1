@@ -4,15 +4,14 @@
 
 #pragma once
 #include <string>
-#include "AdjacentNodesList.h"
-#include "AdjacentNode.h"
+
 using namespace std;
 
 class Vertex{
 private:
     string name;
     Vertex * pNext;
-    AdjacentNode * pAdjNode;
+
 public:
     Vertex(string name);
     string GetName();
