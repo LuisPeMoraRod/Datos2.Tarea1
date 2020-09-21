@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.o"
+  "CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.o"
   "CMakeFiles/Tarea_1.dir/Vertex.cpp.o"
   "CMakeFiles/Tarea_1.dir/VertexList.cpp.o"
   "CMakeFiles/Tarea_1.dir/main.cpp.o"

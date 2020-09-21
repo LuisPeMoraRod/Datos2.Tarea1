@@ -4,7 +4,9 @@
 
 #include "Vertex.h"
 
-Vertex::Vertex(string name) : name(name) {}
+Vertex::Vertex(string name) : name(name) {
+
+}
 
 string Vertex::GetName() {
     return this->name;

@@ -143,6 +143,60 @@ Tarea_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/build
 .PHONY : Tarea_1/fast
 
+AdjacentNode.o: AdjacentNode.cpp.o
+
+.PHONY : AdjacentNode.o
+
+# target to build an object file
+AdjacentNode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.o
+.PHONY : AdjacentNode.cpp.o
+
+AdjacentNode.i: AdjacentNode.cpp.i
+
+.PHONY : AdjacentNode.i
+
+# target to preprocess a source file
+AdjacentNode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.i
+.PHONY : AdjacentNode.cpp.i
+
+AdjacentNode.s: AdjacentNode.cpp.s
+
+.PHONY : AdjacentNode.s
+
+# target to generate assembly for a file
+AdjacentNode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.s
+.PHONY : AdjacentNode.cpp.s
+
+AdjacentNodesList.o: AdjacentNodesList.cpp.o
+
+.PHONY : AdjacentNodesList.o
+
+# target to build an object file
+AdjacentNodesList.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.o
+.PHONY : AdjacentNodesList.cpp.o
+
+AdjacentNodesList.i: AdjacentNodesList.cpp.i
+
+.PHONY : AdjacentNodesList.i
+
+# target to preprocess a source file
+AdjacentNodesList.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.i
+.PHONY : AdjacentNodesList.cpp.i
+
+AdjacentNodesList.s: AdjacentNodesList.cpp.s
+
+.PHONY : AdjacentNodesList.s
+
+# target to generate assembly for a file
+AdjacentNodesList.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNodesList.cpp.s
+.PHONY : AdjacentNodesList.cpp.s
+
 Vertex.o: Vertex.cpp.o
 
 .PHONY : Vertex.o
@@ -233,6 +287,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Tarea_1"
+	@echo "... AdjacentNode.o"
+	@echo "... AdjacentNode.i"
+	@echo "... AdjacentNode.s"
+	@echo "... AdjacentNodesList.o"
+	@echo "... AdjacentNodesList.i"
+	@echo "... AdjacentNodesList.s"
 	@echo "... Vertex.o"
 	@echo "... Vertex.i"
 	@echo "... Vertex.s"

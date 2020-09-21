@@ -41,5 +41,6 @@ int main(int argc, char *argv[]) {
         std::cout<<ptr->GetName()<<std::endl;
         ptr = ptr->GetPNext();
     }
+    std::cout<< list.Contains("A")<<std::endl;
     return 0;
 }

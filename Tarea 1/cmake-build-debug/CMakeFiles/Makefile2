@@ -94,12 +94,12 @@ clean: CMakeFiles/Tarea_1.dir/clean
 CMakeFiles/Tarea_1.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4 "Built target Tarea_1"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5,6 "Built target Tarea_1"
 .PHONY : CMakeFiles/Tarea_1.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Tarea_1.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" 4
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Tarea_1.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" 0
 .PHONY : CMakeFiles/Tarea_1.dir/rule

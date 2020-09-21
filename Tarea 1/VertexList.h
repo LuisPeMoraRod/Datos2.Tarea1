@@ -13,11 +13,12 @@ private:
     Vertex* pHead;
     Vertex* pLast;
 public:
-    VertexList(Vertex* pFirst);
+    VertexList();
     Vertex* GetHead();
     Vertex* GetLast();
     int GetSize();
     void InsertEnd(Vertex* pVertex);
+    bool Contains(string name);
     ~VertexList();
 };
 
