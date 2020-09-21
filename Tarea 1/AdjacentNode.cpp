@@ -6,10 +6,9 @@
 
 /*!
  * Constructor method
- * @param vertex : Vertex*
+ * @param name
  */
-AdjacentNode::AdjacentNode(Vertex *vertex) {
-    string name = vertex->GetName();
+AdjacentNode::AdjacentNode(string name) {
     this->name = name;
 }
 

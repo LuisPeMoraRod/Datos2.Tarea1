@@ -24,7 +24,7 @@ int main(int argc, char *argv[]) {
     Vertex *  pVertexB = &vertex_b;
     Vertex *  pVertexC = &vertex_c;
 
-    VertexList list (pVertexA);
+    VertexList list;
     std::cout<< "New linked list."<<std::endl;
     std::cout<<"First element: "<< list.GetHead()->GetName()<<std::endl;
     std::cout<< "Size: "<<list.GetSize()<<std::endl<<std::endl;
@@ -41,6 +41,5 @@ int main(int argc, char *argv[]) {
         std::cout<<ptr->GetName()<<std::endl;
         ptr = ptr->GetPNext();
     }
-    std::cout<< list.Contains("A")<<std::endl;
     return 0;
 }

@@ -12,7 +12,7 @@ private:
     string name;
     AdjacentNode* pNextNode;
 public:
-    AdjacentNode(Vertex* vertex);
+    AdjacentNode(string name);
     void SetNextNode(AdjacentNode* pNextNode);
     string GetName();
     AdjacentNode* GetNextNode();

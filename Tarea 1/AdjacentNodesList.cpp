@@ -8,11 +8,11 @@ AdjacentNodesList::AdjacentNodesList() { this->size = 0; }
 
 AdjacentNodesList::~AdjacentNodesList() {}
 
-int AdjacentNodesList::GetSize() { this->size; }
+int AdjacentNodesList::GetSize() { return this->size; }
 
-AdjacentNode *AdjacentNodesList::GetHead() { this->pHead; }
+AdjacentNode *AdjacentNodesList::GetHead() { return this->pHead; }
 
-AdjacentNode *AdjacentNodesList::GetLast() { this->pLast; }
+AdjacentNode *AdjacentNodesList::GetLast() { return this->pLast; }
 
 void AdjacentNodesList::InsertEnd(AdjacentNode *pNode) {
     if (size == 0) {
