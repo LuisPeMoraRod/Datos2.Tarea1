@@ -4,17 +4,19 @@
 
 #include "AdjacentNode.h"
 
-AdjacentNode::AdjacentNode(Vertex *vertex) {
-    this->name = vertex->GetName();
+AdjacentNode::AdjacentNode(Vertex* vertex) {
+    this->name = vertex->getName();
 }
 
-AdjacentNode::~AdjacentNode() {}
+AdjacentNode::~AdjacentNode() {
+    delete pNext;
+}
 
-string AdjacentNode::GetName() {
+string AdjacentNode::getName() {
     return this->name;
 }
 
-AdjacentNode *AdjacentNode::GetNext() {
+AdjacentNode *AdjacentNode::getPNext() {
     return this->pNext;
 }
 

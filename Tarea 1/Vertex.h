@@ -14,9 +14,9 @@ private:
 
 public:
     Vertex(string name);
-    string GetName();
-    Vertex * GetPNext();
-    void SetPNext(Vertex* pVertex);
+    string getName();
+    Vertex * getPNext();
+    void setPNext(Vertex* pVertex);
     ~Vertex();
 
 };

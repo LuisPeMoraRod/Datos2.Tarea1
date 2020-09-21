@@ -15,8 +15,8 @@ public:
     AdjacentNode(Vertex* vertex);
     ~AdjacentNode();
 
-    string GetName();
-    AdjacentNode* GetNext();
+    string getName();
+    AdjacentNode* getPNext();
     void SetNext(AdjacentNode* pNext);
 
 };

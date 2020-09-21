@@ -98,16 +98,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjNodesList.cpp">
-			<Option target="Tarea_1"/>
-		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjNodesList.h">
-			<Option target="Tarea_1"/>
-		</Unit>
 		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjacentNode.cpp">
 			<Option target="Tarea_1"/>
 		</Unit>
 		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjacentNode.h">
+			<Option target="Tarea_1"/>
+		</Unit>
+		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.cpp">
+			<Option target="Tarea_1"/>
+		</Unit>
+		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.h">
 			<Option target="Tarea_1"/>
 		</Unit>
 		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Vertex.cpp">

@@ -129,18 +129,18 @@ CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjacentNode.cpp" -o CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.s
 
-CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o: CMakeFiles/Tarea_1.dir/flags.make
-CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o: ../AdjNodesList.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjNodesList.cpp"
+CMakeFiles/Tarea_1.dir/NodesList.cpp.o: CMakeFiles/Tarea_1.dir/flags.make
+CMakeFiles/Tarea_1.dir/NodesList.cpp.o: ../NodesList.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Tarea_1.dir/NodesList.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Tarea_1.dir/NodesList.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.cpp"
 
-CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjNodesList.cpp" > CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.i
+CMakeFiles/Tarea_1.dir/NodesList.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Tarea_1.dir/NodesList.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.cpp" > CMakeFiles/Tarea_1.dir/NodesList.cpp.i
 
-CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjNodesList.cpp" -o CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.s
+CMakeFiles/Tarea_1.dir/NodesList.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Tarea_1.dir/NodesList.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.cpp" -o CMakeFiles/Tarea_1.dir/NodesList.cpp.s
 
 # Object files for target Tarea_1
 Tarea_1_OBJECTS = \
@@ -148,7 +148,7 @@ Tarea_1_OBJECTS = \
 "CMakeFiles/Tarea_1.dir/Vertex.cpp.o" \
 "CMakeFiles/Tarea_1.dir/VertexList.cpp.o" \
 "CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.o" \
-"CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o"
+"CMakeFiles/Tarea_1.dir/NodesList.cpp.o"
 
 # External object files for target Tarea_1
 Tarea_1_EXTERNAL_OBJECTS =
@@ -157,7 +157,7 @@ Tarea_1: CMakeFiles/Tarea_1.dir/main.cpp.o
 Tarea_1: CMakeFiles/Tarea_1.dir/Vertex.cpp.o
 Tarea_1: CMakeFiles/Tarea_1.dir/VertexList.cpp.o
 Tarea_1: CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.o
-Tarea_1: CMakeFiles/Tarea_1.dir/AdjNodesList.cpp.o
+Tarea_1: CMakeFiles/Tarea_1.dir/NodesList.cpp.o
 Tarea_1: CMakeFiles/Tarea_1.dir/build.make
 Tarea_1: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8
 Tarea_1: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8

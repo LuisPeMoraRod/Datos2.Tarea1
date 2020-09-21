@@ -6,12 +6,11 @@
 
 Vertex::Vertex(string name) : name(name) {}
 
-string Vertex::GetName() { return this->name; }
+string Vertex::getName() { return this->name; }
 
-void Vertex::SetPNext(Vertex *pVertex) { this->pNext = pVertex; }
+void Vertex::setPNext(Vertex *pVertex) { this->pNext = pVertex; }
 
-Vertex *Vertex::GetPNext() { return this->pNext; }
+Vertex *Vertex::getPNext() { return this->pNext; }
 
 Vertex::~Vertex() {}
-
 

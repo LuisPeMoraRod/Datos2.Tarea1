@@ -14,12 +14,15 @@ private:
     Vertex* pLast;
 public:
     VertexList();
-    Vertex* GetHead();
-    Vertex* GetLast();
-    int GetSize();
-    void InsertEnd(Vertex* pVertex);
-    bool Contains(string name);
+    void insertEnd(Vertex* pVertex);
+    bool contains(string name);
     ~VertexList();
+
+    int getSize() const;
+
+    Vertex *getPHead() const;
+
+    Vertex *getPLast() const;
 };
 
 

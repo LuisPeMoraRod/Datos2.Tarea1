@@ -9,26 +9,34 @@
  */
 VertexList::VertexList() {
     this->size = 0;
+    this->pHead = nullptr;
+    this->pLast = nullptr;
 }
 
-Vertex *VertexList::GetHead() { return this->pHead; }
+int VertexList::getSize() const {
+    return size;
+}
 
-Vertex *VertexList::GetLast() { return this->pLast; }
+Vertex *VertexList::getPHead() const {
+    return pHead;
+}
 
-int VertexList::GetSize() { return this->size; }
+Vertex *VertexList::getPLast() const {
+    return pLast;
+}
 
 /*!
  * Checks if a vertex with an specific name is already contained in the linked list
  * @param name
  * @return true if a vertex with the specified name already exists
  */
-bool VertexList::Contains(string name) {
+bool VertexList::contains(string name) {
     Vertex * ptr = this->pHead;
     for (int i = 0; i<this->size;i++){
-        if (name.compare(ptr->GetName())==0){
+        if (name.compare(ptr->getName()) == 0){
             return true;
         }
-        ptr = ptr->GetPNext();
+        ptr = ptr->getPNext();
     }
     return false;
 }
@@ -37,13 +45,13 @@ bool VertexList::Contains(string name) {
  * Inserts node at the end of the simple linked list
  * @param pVertex : Vertex*
  */
-void VertexList::InsertEnd(Vertex *pVertex) {
+void VertexList::insertEnd(Vertex *pVertex) {
     if (size == 0){
         this->pHead = pVertex;
         this->pLast = pVertex;
         this->size++;
     }else {
-        this->pLast->SetPNext(pVertex);
+        this->pLast->setPNext(pVertex);
         this->pLast = pVertex;
         this->size++;
     }
@@ -52,6 +60,9 @@ void VertexList::InsertEnd(Vertex *pVertex) {
 /*!
  * Destructor method
  */
-VertexList::~VertexList() {}
+VertexList::~VertexList() {
+    delete pHead;
+    delete pLast;
+}
 
 
