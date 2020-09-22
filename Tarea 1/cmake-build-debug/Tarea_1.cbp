@@ -98,28 +98,16 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjacentNode.cpp">
+		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/FloydWarshall.cpp">
 			<Option target="Tarea_1"/>
 		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/AdjacentNode.h">
+		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/FloydWarshall.h">
 			<Option target="Tarea_1"/>
 		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.cpp">
+		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Graph.cpp">
 			<Option target="Tarea_1"/>
 		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/NodesList.h">
-			<Option target="Tarea_1"/>
-		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Vertex.cpp">
-			<Option target="Tarea_1"/>
-		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Vertex.h">
-			<Option target="Tarea_1"/>
-		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/VertexList.cpp">
-			<Option target="Tarea_1"/>
-		</Unit>
-		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/VertexList.h">
+		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Graph.h">
 			<Option target="Tarea_1"/>
 		</Unit>
 		<Unit filename="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/main.cpp">

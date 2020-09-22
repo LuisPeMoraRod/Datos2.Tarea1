@@ -143,113 +143,59 @@ Tarea_1/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/build
 .PHONY : Tarea_1/fast
 
-AdjacentNode.o: AdjacentNode.cpp.o
+FloydWarshall.o: FloydWarshall.cpp.o
 
-.PHONY : AdjacentNode.o
-
-# target to build an object file
-AdjacentNode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.o
-.PHONY : AdjacentNode.cpp.o
-
-AdjacentNode.i: AdjacentNode.cpp.i
-
-.PHONY : AdjacentNode.i
-
-# target to preprocess a source file
-AdjacentNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.i
-.PHONY : AdjacentNode.cpp.i
-
-AdjacentNode.s: AdjacentNode.cpp.s
-
-.PHONY : AdjacentNode.s
-
-# target to generate assembly for a file
-AdjacentNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/AdjacentNode.cpp.s
-.PHONY : AdjacentNode.cpp.s
-
-NodesList.o: NodesList.cpp.o
-
-.PHONY : NodesList.o
+.PHONY : FloydWarshall.o
 
 # target to build an object file
-NodesList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/NodesList.cpp.o
-.PHONY : NodesList.cpp.o
+FloydWarshall.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/FloydWarshall.cpp.o
+.PHONY : FloydWarshall.cpp.o
 
-NodesList.i: NodesList.cpp.i
+FloydWarshall.i: FloydWarshall.cpp.i
 
-.PHONY : NodesList.i
+.PHONY : FloydWarshall.i
 
 # target to preprocess a source file
-NodesList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/NodesList.cpp.i
-.PHONY : NodesList.cpp.i
+FloydWarshall.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/FloydWarshall.cpp.i
+.PHONY : FloydWarshall.cpp.i
 
-NodesList.s: NodesList.cpp.s
+FloydWarshall.s: FloydWarshall.cpp.s
 
-.PHONY : NodesList.s
+.PHONY : FloydWarshall.s
 
 # target to generate assembly for a file
-NodesList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/NodesList.cpp.s
-.PHONY : NodesList.cpp.s
+FloydWarshall.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/FloydWarshall.cpp.s
+.PHONY : FloydWarshall.cpp.s
 
-Vertex.o: Vertex.cpp.o
+Graph.o: Graph.cpp.o
 
-.PHONY : Vertex.o
+.PHONY : Graph.o
 
 # target to build an object file
-Vertex.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/Vertex.cpp.o
-.PHONY : Vertex.cpp.o
+Graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/Graph.cpp.o
+.PHONY : Graph.cpp.o
 
-Vertex.i: Vertex.cpp.i
+Graph.i: Graph.cpp.i
 
-.PHONY : Vertex.i
-
-# target to preprocess a source file
-Vertex.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/Vertex.cpp.i
-.PHONY : Vertex.cpp.i
-
-Vertex.s: Vertex.cpp.s
-
-.PHONY : Vertex.s
-
-# target to generate assembly for a file
-Vertex.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/Vertex.cpp.s
-.PHONY : Vertex.cpp.s
-
-VertexList.o: VertexList.cpp.o
-
-.PHONY : VertexList.o
-
-# target to build an object file
-VertexList.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/VertexList.cpp.o
-.PHONY : VertexList.cpp.o
-
-VertexList.i: VertexList.cpp.i
-
-.PHONY : VertexList.i
+.PHONY : Graph.i
 
 # target to preprocess a source file
-VertexList.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/VertexList.cpp.i
-.PHONY : VertexList.cpp.i
+Graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/Graph.cpp.i
+.PHONY : Graph.cpp.i
 
-VertexList.s: VertexList.cpp.s
+Graph.s: Graph.cpp.s
 
-.PHONY : VertexList.s
+.PHONY : Graph.s
 
 # target to generate assembly for a file
-VertexList.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/VertexList.cpp.s
-.PHONY : VertexList.cpp.s
+Graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Tarea_1.dir/build.make CMakeFiles/Tarea_1.dir/Graph.cpp.s
+.PHONY : Graph.cpp.s
 
 main.o: main.cpp.o
 
@@ -287,18 +233,12 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Tarea_1"
-	@echo "... AdjacentNode.o"
-	@echo "... AdjacentNode.i"
-	@echo "... AdjacentNode.s"
-	@echo "... NodesList.o"
-	@echo "... NodesList.i"
-	@echo "... NodesList.s"
-	@echo "... Vertex.o"
-	@echo "... Vertex.i"
-	@echo "... Vertex.s"
-	@echo "... VertexList.o"
-	@echo "... VertexList.i"
-	@echo "... VertexList.s"
+	@echo "... FloydWarshall.o"
+	@echo "... FloydWarshall.i"
+	@echo "... FloydWarshall.s"
+	@echo "... Graph.o"
+	@echo "... Graph.i"
+	@echo "... Graph.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
