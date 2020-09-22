@@ -24,9 +24,16 @@ void FloydWarshall::setDiag(int **matrix) {
 }
 
 void FloydWarshall::setDistances(int **matrix) {
+    Vertex* pVertex;Vertex* pVertexTemp;
     for (int i = 0; i < vertices; i++) {
+        pVertex = this->pGraph->getPVertex(i);
+        NodesList* pNodeListTemp = pVertex->getPNodesList();
+        string nodeName;
+        AdjacentNode* pNodeTemp;
         for (int j = 0; j < vertices; j++){
-
+            pVertexTemp = this->pGraph->getPVertex(j);
+            nodeName = pVertexTemp->getName();
+            pNodeTemp = pNodeListTemp->getNode(nodeName);
         }
 
     }
