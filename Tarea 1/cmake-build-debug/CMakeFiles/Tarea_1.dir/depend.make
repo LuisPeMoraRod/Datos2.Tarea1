@@ -8,6 +8,7 @@ CMakeFiles/Tarea_1.dir/FloydWarshall.cpp.o: ../Graph.h
 CMakeFiles/Tarea_1.dir/Graph.cpp.o: ../Graph.cpp
 CMakeFiles/Tarea_1.dir/Graph.cpp.o: ../Graph.h
 
+CMakeFiles/Tarea_1.dir/main.cpp.o: ../FloydWarshall.h
 CMakeFiles/Tarea_1.dir/main.cpp.o: ../Graph.h
 CMakeFiles/Tarea_1.dir/main.cpp.o: ../main.cpp
 CMakeFiles/Tarea_1.dir/main.cpp.o: /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h

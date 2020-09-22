@@ -9,12 +9,14 @@
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/FloydWarshall.cpp
 FloydWarshall.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/FloydWarshall.h
+iostream
+-
 
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/FloydWarshall.h
-Graph.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Graph.h
-
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Graph.cpp
+string
+-
+limits
+-
 Graph.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Graph.h
 
@@ -31,6 +33,8 @@ iostream
 -
 Graph.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Graph.h
+FloydWarshall.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/FloydWarshall.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qalgorithms.h
 QtCore/qglobal.h

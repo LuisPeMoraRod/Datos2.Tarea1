@@ -1,10 +1,8 @@
 #include <QApplication>
 #include <QWidget>
 #include <iostream>
-
-
 #include "Graph.h"
-
+#include "FloydWarshall.h"
 
 int main(int argc, char *argv[]) {
 /*
@@ -17,50 +15,87 @@ int main(int argc, char *argv[]) {
     window.show();
 
     return app.exec();*/
-    Vertex vertex_a ("A");
-    Vertex vertex_b ("B");
-    Vertex vertex_c ("C");
 
-    Vertex *  pVertexA = &vertex_a;
-    Vertex *  pVertexB = &vertex_b;
-    Vertex *  pVertexC = &vertex_c;
+    Vertex *  pVertexA = new Vertex("A");
+    Vertex *  pVertexB = new Vertex("B");
+    Vertex *  pVertexC = new Vertex("C");
+    Vertex *  pVertexD = new Vertex("D");
+    Vertex *  pVertexE = new Vertex("E");
 
-    VertexList* list = VertexList::getInstance();
-    list->insertEnd(pVertexA);
-    std::cout<< "New linked list."<<std::endl;
-    std::cout << "First element: " << list->getPHead()->getName() << std::endl;
-    std::cout<< "Size: "<<list->getSize()<<std::endl<<std::endl;
+    VertexList* pGraph = VertexList::getInstance();
 
-    list->insertEnd(pVertexB);
-    std::cout<<"Insertion"<<std::endl;
-    std::cout << "Last element: " << list->getPLast()->getName() << std::endl;
-    std::cout<< "Size: "<<list->getSize()<<std::endl<<std::endl;
+    pGraph->insertEnd(pVertexA);
+    pGraph->insertEnd(pVertexB);
+    pGraph->insertEnd(pVertexC);
+    pGraph->insertEnd(pVertexD);
+    pGraph->insertEnd(pVertexE);
 
-    list->insertEnd(pVertexC);
-    std::cout<<"Iteration"<<std::endl;
-    Vertex* ptr = list->getPHead();
-    for (int i = 0; i< list->getSize(); i++){
+    std::cout<<"Vertices"<<std::endl;
+    Vertex* ptr = pGraph->getPHead();
+    for (int i = 0; i < pGraph->getSize(); i++){
         std::cout <<"Name: "<< ptr->getName() << " id: "<<ptr->getId()<<std::endl;
         ptr = ptr->getPNext();
     }
     std::cout<<" "<<std::endl;
 
-    AdjacentNode* pNode_a = new AdjacentNode(pVertexA->getName(),10);
-    AdjacentNode* pNode_b = new AdjacentNode(pVertexB->getName(),13);
+    /*
+     * Adjacent nodes for A
+     */
+    AdjacentNode* pNodeA_b = new AdjacentNode(pVertexB->getName(),2);
+    AdjacentNode* pNodeA_c = new AdjacentNode(pVertexC->getName(),10);
+    NodesList* pNodesA = pVertexA->getPNodesList();
+    pNodesA->insertEnd(pNodeA_b); pNodesA->insertEnd(pNodeA_c);
 
-    NodesList* pNodes = pVertexC->getPNodesList();
-    pNodes->insertEnd(pNode_a); pNodes->insertEnd(pNode_b);
-    AdjacentNode* ptr2 = pNodes->getPHead();
-    std::cout<<"Adjacent nodes to C: "<<std::endl;
-    for (int i = 0; i<pNodes->getSize();i++){
-        std::cout<<ptr2->getName()<<" address: "<<ptr2<<std::endl;
-        ptr2 = ptr2->getPNext();
-    }
+    /*
+     * Adjacent nodes for B
+     */
+    AdjacentNode* pNodeB_d = new AdjacentNode(pVertexD->getName(),3);
+    AdjacentNode* pNodeB_c = new AdjacentNode(pVertexC->getName(),40);
+    NodesList* pNodesB = pVertexB->getPNodesList();
+    pNodesB->insertEnd(pNodeB_d); pNodesB->insertEnd(pNodeB_c);
 
-    std::cout<<" "<<std::endl;
-    std::cout<<"C address: "<<pVertexC<<std::endl;
-    Vertex* pVertex = list->getPVertex(1);
-    std::cout<<pNodes->getNode(pVertex->getName())<<std::endl;
+    /*
+     * Adjacent nodes for C
+     */
+    AdjacentNode* pNodeC_e = new AdjacentNode(pVertexE->getName(),32);
+    NodesList* pNodesC = pVertexC->getPNodesList();
+    pNodesC->insertEnd(pNodeC_e);
 
+    /*
+     * Adjacent nodes for D
+     */
+    AdjacentNode* pNodeD_b = new AdjacentNode(pVertexB->getName(),3);
+    AdjacentNode* pNodeD_c = new AdjacentNode(pVertexC->getName(),7);
+    NodesList* pNodesD = pVertexD->getPNodesList();
+    pNodesD->insertEnd(pNodeD_b); pNodesD->insertEnd(pNodeD_c);
+
+    /*
+     * Adjacent nodes for E
+     */
+    AdjacentNode* pNodeE_d = new AdjacentNode(pVertexD->getName(),6);
+    AdjacentNode* pNodeE_c = new AdjacentNode(pVertexC->getName(),32);
+    NodesList* pNodesE = pVertexE->getPNodesList();
+    pNodesE->insertEnd(pNodeE_d); pNodesE->insertEnd(pNodeE_c);
+
+    FloydWarshall* pMatrix = new FloydWarshall(pGraph);
+    pMatrix->printMatrix();
+
+    delete pVertexA;
+    delete pVertexB;
+    delete pVertexC;
+    delete pVertexD;
+    delete pVertexE;
+
+    delete pNodeA_b;
+    delete pNodeA_c;
+    delete pNodeB_d;
+    delete pNodeB_c;
+    delete pNodeC_e;
+    delete pNodeD_b;
+    delete pNodeD_c;
+    delete pNodeE_c;
+    delete pNodeE_d;
+
+    delete pMatrix;
     return 0;
 }

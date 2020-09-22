@@ -11,9 +11,7 @@ AdjacentNode::AdjacentNode(string name, int weight) {
     this->weight = weight;
 }
 
-AdjacentNode::~AdjacentNode() {
-    delete pNext;
-}
+AdjacentNode::~AdjacentNode() {}
 
 string AdjacentNode::getName() const {
     return this->name;
@@ -102,9 +100,7 @@ Vertex::Vertex(string name) : name(name) {
 /*!
  * Destructor method
  */
-Vertex::~Vertex() {
-
-}
+Vertex::~Vertex() {}
 
 int Vertex::amount = 0;
 
