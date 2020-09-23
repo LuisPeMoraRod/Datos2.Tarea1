@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/Tarea_1.dir/main.cpp.o CMakeFiles/Tarea_1.dir/Graph.cpp.o CMakeFiles/Tarea_1.dir/FloydWarshall.cpp.o  -o Tarea_1  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 

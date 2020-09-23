@@ -1,3 +1,0 @@
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/cmake-build-debug/CMakeFiles/Tarea_1.dir
