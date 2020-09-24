@@ -90,35 +90,50 @@ CMakeFiles/Client.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/main.cpp" -o CMakeFiles/Client.dir/main.cpp.s
 
-CMakeFiles/Client.dir/table.cpp.o: CMakeFiles/Client.dir/flags.make
-CMakeFiles/Client.dir/table.cpp.o: ../table.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Client.dir/table.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/table.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/table.cpp"
+CMakeFiles/Client.dir/window.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/window.cpp.o: ../window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Client.dir/window.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/window.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.cpp"
 
-CMakeFiles/Client.dir/table.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/table.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/table.cpp" > CMakeFiles/Client.dir/table.cpp.i
+CMakeFiles/Client.dir/window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/window.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.cpp" > CMakeFiles/Client.dir/window.cpp.i
 
-CMakeFiles/Client.dir/table.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/table.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/table.cpp" -o CMakeFiles/Client.dir/table.cpp.s
+CMakeFiles/Client.dir/window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/window.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.cpp" -o CMakeFiles/Client.dir/window.cpp.s
+
+CMakeFiles/Client.dir/SocketClient.cpp.o: CMakeFiles/Client.dir/flags.make
+CMakeFiles/Client.dir/SocketClient.cpp.o: ../SocketClient.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Client.dir/SocketClient.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client.dir/SocketClient.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.cpp"
+
+CMakeFiles/Client.dir/SocketClient.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client.dir/SocketClient.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.cpp" > CMakeFiles/Client.dir/SocketClient.cpp.i
+
+CMakeFiles/Client.dir/SocketClient.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client.dir/SocketClient.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.cpp" -o CMakeFiles/Client.dir/SocketClient.cpp.s
 
 # Object files for target Client
 Client_OBJECTS = \
 "CMakeFiles/Client.dir/main.cpp.o" \
-"CMakeFiles/Client.dir/table.cpp.o"
+"CMakeFiles/Client.dir/window.cpp.o" \
+"CMakeFiles/Client.dir/SocketClient.cpp.o"
 
 # External object files for target Client
 Client_EXTERNAL_OBJECTS =
 
 Client: CMakeFiles/Client.dir/main.cpp.o
-Client: CMakeFiles/Client.dir/table.cpp.o
+Client: CMakeFiles/Client.dir/window.cpp.o
+Client: CMakeFiles/Client.dir/SocketClient.cpp.o
 Client: CMakeFiles/Client.dir/build.make
 Client: /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8
 Client: /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8
 Client: /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8
 Client: CMakeFiles/Client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable Client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

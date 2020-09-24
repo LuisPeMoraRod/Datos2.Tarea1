@@ -1,19 +1,15 @@
 #include <QApplication>
-#include <QWidget>
-
-#include <QApplication>
-#include "table.h"
-
-#include <iostream>
+#include "window.h"
+#include "SocketClient.h"
 
 int main(int argc, char *argv[]) {
 
     QApplication app(argc, argv);
 
-    Table window;
+    MainWindow window;
 
-    window.resize(400, 250);
-    window.setWindowTitle("QTableWidget");
+    window.resize(300, 190);
+    window.setWindowTitle("Button");
     window.show();
 
     return app.exec();

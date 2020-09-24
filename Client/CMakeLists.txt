@@ -4,5 +4,5 @@ project(Client)
 set(CMAKE_CXX_STANDARD 17)
 find_package(Qt5Widgets REQUIRED)
 
-add_executable(Client main.cpp table.cpp table.h)
+add_executable(Client main.cpp window.cpp window.h SocketClient.cpp SocketClient.h)
 target_link_libraries(Client Qt5::Widgets)

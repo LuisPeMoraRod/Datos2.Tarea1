@@ -143,6 +143,33 @@ Client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/build
 .PHONY : Client/fast
 
+SocketClient.o: SocketClient.cpp.o
+
+.PHONY : SocketClient.o
+
+# target to build an object file
+SocketClient.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/SocketClient.cpp.o
+.PHONY : SocketClient.cpp.o
+
+SocketClient.i: SocketClient.cpp.i
+
+.PHONY : SocketClient.i
+
+# target to preprocess a source file
+SocketClient.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/SocketClient.cpp.i
+.PHONY : SocketClient.cpp.i
+
+SocketClient.s: SocketClient.cpp.s
+
+.PHONY : SocketClient.s
+
+# target to generate assembly for a file
+SocketClient.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/SocketClient.cpp.s
+.PHONY : SocketClient.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -170,32 +197,32 @@ main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/main.cpp.s
 .PHONY : main.cpp.s
 
-table.o: table.cpp.o
+window.o: window.cpp.o
 
-.PHONY : table.o
+.PHONY : window.o
 
 # target to build an object file
-table.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/table.cpp.o
-.PHONY : table.cpp.o
+window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/window.cpp.o
+.PHONY : window.cpp.o
 
-table.i: table.cpp.i
+window.i: window.cpp.i
 
-.PHONY : table.i
+.PHONY : window.i
 
 # target to preprocess a source file
-table.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/table.cpp.i
-.PHONY : table.cpp.i
+window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/window.cpp.i
+.PHONY : window.cpp.i
 
-table.s: table.cpp.s
+window.s: window.cpp.s
 
-.PHONY : table.s
+.PHONY : window.s
 
 # target to generate assembly for a file
-table.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/table.cpp.s
-.PHONY : table.cpp.s
+window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Client.dir/build.make CMakeFiles/Client.dir/window.cpp.s
+.PHONY : window.cpp.s
 
 # Help Target
 help:
@@ -206,12 +233,15 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Client"
+	@echo "... SocketClient.o"
+	@echo "... SocketClient.i"
+	@echo "... SocketClient.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
-	@echo "... table.o"
-	@echo "... table.i"
-	@echo "... table.s"
+	@echo "... window.o"
+	@echo "... window.i"
+	@echo "... window.s"
 .PHONY : help
 
 
