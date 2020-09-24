@@ -23,12 +23,16 @@ QApplication
 -
 window.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.h
-SocketClient.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.h
 
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.cpp
 window.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.h
+QFormLayout
+-
+QLabel
+-
+QLineEdit
+-
 
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.h
 QMainWindow
@@ -45,6 +49,12 @@ iostream
 -
 SocketClient.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.h
+QWidget
+-
+QFormLayout
+-
+QLineEdit
+-
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QCoreApplication
 qcoreapplication.h
@@ -968,6 +978,14 @@ QtGui/qcolor.h
 QtGui/qbrush.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qpen.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qbrush.h
+-
+
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qpixelformat.h
 QtGui/qtguiglobal.h
 -
@@ -1022,6 +1040,46 @@ QtCore/qprocessordetection.h
 QtGui/qtguiglobal.h
 -
 QtCore/qprocessordetection.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextcursor.h
+QtGui/qtguiglobal.h
+-
+QtCore/qstring.h
+-
+QtCore/qshareddata.h
+-
+QtGui/qtextformat.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextformat.h
+QtGui/qtguiglobal.h
+-
+QtGui/qcolor.h
+-
+QtGui/qfont.h
+-
+QtCore/qshareddata.h
+-
+QtCore/qvector.h
+-
+QtCore/qvariant.h
+-
+QtGui/qpen.h
+-
+QtGui/qbrush.h
+-
+QtGui/qtextoption.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtextoption.h
+QtGui/qtguiglobal.h
+-
+QtCore/qnamespace.h
+-
+QtCore/qchar.h
+-
+QtCore/qmetatype.h
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qtgui-config.h
@@ -1084,6 +1142,22 @@ QtGui/qtguiglobal.h
 qapplication.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QFormLayout
+qformlayout.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qformlayout.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLabel
+qlabel.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLayout
+qlayout.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QLineEdit
+qlineedit.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMainWindow
 qmainwindow.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h
@@ -1091,6 +1165,10 @@ qmainwindow.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QPushButton
 qpushbutton.h
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qpushbutton.h
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget
+qwidget.h
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qwidget.h
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h
 QtWidgets/qtwidgetsglobal.h
@@ -1120,10 +1198,90 @@ QtWidgets/qdesktopwidget.h
 QtGui/qguiapplication.h
 -
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qboxlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qlayout.h
+-
+QtWidgets/qwidget.h
+-
+limits.h
+-
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdesktopwidget.h
 QtWidgets/qtwidgetsglobal.h
 -
 QtWidgets/qwidget.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qformlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/QLayout
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qframe.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qwidget.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qgridlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qlayout.h
+-
+QtWidgets/qwidget.h
+-
+limits.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlabel.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayout.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtCore/qobject.h
+-
+QtWidgets/qlayoutitem.h
+-
+QtWidgets/qsizepolicy.h
+-
+QtCore/qrect.h
+-
+QtCore/qmargins.h
+-
+limits.h
+-
+QtWidgets/qboxlayout.h
+-
+QtWidgets/qgridlayout.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlayoutitem.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qsizepolicy.h
+-
+QtCore/qrect.h
+-
+limits.h
+-
+
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qlineedit.h
+QtWidgets/qtwidgetsglobal.h
+-
+QtWidgets/qframe.h
+-
+QtGui/qtextcursor.h
+-
+QtCore/qstring.h
+-
+QtCore/qmargins.h
 -
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmainwindow.h

@@ -9,6 +9,9 @@
 #include "stdlib.h"
 #include <iostream>
 #include "SocketClient.h"
+#include <QWidget>
+#include <QFormLayout>
+#include <QLineEdit>
 
 class MainWindow : public QWidget
 {
@@ -22,4 +25,16 @@ public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+};
+
+class Form : public QWidget{
+private:
+    QLineEdit *pNewNodeEdit;
+    QLineEdit *pFromEdit;
+    QLineEdit *pToEdit;
+    QLineEdit *pWeightEdit;
+    QFormLayout *formLayout;
+public:
+    Form(QWidget* parent = 0);
+    ~Form();
 };

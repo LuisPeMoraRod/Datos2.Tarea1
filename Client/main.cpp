@@ -1,12 +1,11 @@
 #include <QApplication>
 #include "window.h"
-#include "SocketClient.h"
 
 int main(int argc, char *argv[]) {
 
     QApplication app(argc, argv);
 
-    MainWindow window;
+    Form window;
 
     window.resize(300, 190);
     window.setWindowTitle("Button");
