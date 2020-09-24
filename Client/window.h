@@ -2,6 +2,7 @@
 // Created by luispedro on 23/9/20.
 //
 #pragma once
+
 #include <QMainWindow>
 #include <QPushButton>
 #include <QCoreApplication>
@@ -12,29 +13,37 @@
 #include <QWidget>
 #include <QFormLayout>
 #include <QLineEdit>
+#include <string>
 
-class MainWindow : public QWidget
-{
+using namespace std;
+
+class MainWindow : public QWidget {
 private slots:
-    void handleButton();
+
+    void handleNewVertex();
+
+    void handleNewEdge();
 
 private:
-    QPushButton *quitBtn;
+    QPushButton *pNewNodeBtn;
+    QPushButton *pNewEdgeBtn;
 
-public:
-    MainWindow(QWidget *parent = 0);
-    ~MainWindow();
-
-};
-
-class Form : public QWidget{
-private:
     QLineEdit *pNewNodeEdit;
     QLineEdit *pFromEdit;
     QLineEdit *pToEdit;
     QLineEdit *pWeightEdit;
     QFormLayout *formLayout;
+
+    QVBoxLayout *pVbox;
+    QHBoxLayout *pHBox;
+
+    int vSpacing = 8;
+    int hSpacing = 6;
+    int w = 180;
+
 public:
-    Form(QWidget* parent = 0);
-    ~Form();
+    MainWindow(QWidget *parent = 0);
+
+    ~MainWindow();
+
 };

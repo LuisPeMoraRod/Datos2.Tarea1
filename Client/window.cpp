@@ -8,45 +8,91 @@
 #include <QLineEdit>
 
 MainWindow::MainWindow(QWidget *parent) {
-    QPushButton *quitBtn = new QPushButton("Quit", this);
-    quitBtn->setGeometry(50, 40, 75, 30);
-    connect(quitBtn, &QPushButton::clicked, this, &MainWindow::handleButton);
+    pVbox = new QVBoxLayout();
+    pHBox = new QHBoxLayout(this);
+
+    pNewNodeBtn = new QPushButton("Add vertex", this);
+    connect(pNewNodeBtn, &QPushButton::clicked, this, &MainWindow::handleNewVertex);
+
+    pNewEdgeBtn = new QPushButton("Add edge", this);
+    connect(pNewEdgeBtn, &QPushButton::clicked, this, &MainWindow::handleNewEdge);
+
+    pVbox->addWidget(pNewNodeBtn);
+    pVbox->addWidget(pNewEdgeBtn);
+    pVbox->addStretch();
+
+
+    pNewNodeEdit = new QLineEdit(this);
+    pNewNodeEdit->setFixedWidth(w);
+
+    pFromEdit = new QLineEdit(this);
+    pFromEdit->setFixedWidth(w);
+
+    pToEdit = new QLineEdit(this);
+    pToEdit->setFixedWidth(w);
+
+    pWeightEdit = new QLineEdit(this);
+    pWeightEdit->setFixedWidth(w);
+
+    formLayout = new QFormLayout;
+    formLayout->setLabelAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+    formLayout->addRow("New vertex:", pNewNodeEdit);
+    formLayout->addRow("New edge from:", pFromEdit);
+    formLayout->addRow("New edge to:", pToEdit);
+    formLayout->addRow("Weight:", pWeightEdit);
+
+    pHBox->addLayout(formLayout);
+    pHBox->addSpacing(hSpacing);
+    pHBox->addLayout(pVbox);
+    pHBox->addStretch();
+
+    setLayout(pHBox);
 
 }
 MainWindow::~MainWindow() {
-    delete quitBtn;
+    delete pVbox;
+    delete pHBox;
+
+    delete pNewNodeBtn;
+    delete pNewEdgeBtn;
+
+    delete pNewNodeEdit;
+    delete pFromEdit;
+    delete pToEdit;
+    delete pWeightEdit;
+
+    delete formLayout;
+
 }
 
-void MainWindow::handleButton()
+/*!
+ * Comunicates with the server via socket to send the new vertex of the graph.
+ */
+void MainWindow::handleNewVertex()
 {
     SocketClient * socket = new SocketClient();
-    char* message = "buenos dias";
+    std::string s_message;
+    std::string prefix = "V:";
+    std::string name = pNewNodeEdit->text().toUtf8().constData();
+    s_message.append(prefix);
+    s_message.append(name);
+    int n = s_message.length();
+    char c_message [n+1];
+    strcpy(c_message,s_message.c_str());
+
+    char* message = c_message;
     char** ptr = &message;
     socket->sendBuffer(ptr);
     std::cout<<"Button pressed "<<std::endl;
 }
 
-Form::Form(QWidget *parent) : QWidget(parent){
-    pNewNodeEdit = new QLineEdit(this);
-    pFromEdit = new QLineEdit(this);
-    pToEdit = new QLineEdit(this);
-    pWeightEdit = new QLineEdit(this);
-
-    formLayout = new QFormLayout;
-    formLayout->setLabelAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-    formLayout->addRow("New Node:", pNewNodeEdit);
-    formLayout->addRow("New edge from:", pFromEdit);
-    formLayout->addRow("New edge to:", pToEdit);
-    formLayout->addRow("Weight:", pWeightEdit);
-
-    setLayout(formLayout);
-
-}
-
-Form::~Form(){
-    delete pNewNodeEdit;
-    delete pFromEdit;
-    delete pToEdit;
-    delete pWeightEdit;
-    delete formLayout;
-}
+/*!
+ * Comunicates with the server via socket to send the info for the new edge in the graph
+ */
+ void MainWindow::handleNewEdge() {
+    SocketClient * socket = new SocketClient();
+    char* message = "buenos dias";
+    char** ptr = &message;
+    socket->sendBuffer(ptr);
+    std::cout<<"Button pressed "<<std::endl;
+ }
