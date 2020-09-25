@@ -24,17 +24,20 @@ private:
     string setHeaders();
     void sort();
 
+    string **getPathsMatrix() const;
+
 public:
     FloydWarshall(VertexList *pGraph);
 
     ~FloydWarshall();
 
     void printMatrix();
-    string getMatrix();
+    string getMatrices();
 
     int **getDistMatrix() const;
 
-    string **getPathsMatrix() const;
+
+    string getGraphRepresentation(string **ppMsg);
 };
 
 

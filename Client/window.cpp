@@ -8,7 +8,9 @@
 #include <QLineEdit>
 
 MainWindow::MainWindow(QWidget *parent) {
-    pVbox = new QVBoxLayout();
+    pVbox0 = new QVBoxLayout();
+    pVbox1 = new QVBoxLayout();
+    pVbox2 = new QVBoxLayout();
     pHBox = new QHBoxLayout(this);
 
     pNewNodeBtn = new QPushButton("Add vertex", this);
@@ -19,10 +21,9 @@ MainWindow::MainWindow(QWidget *parent) {
     connect(pNewEdgeBtn, &QPushButton::clicked, this, &MainWindow::handleNewEdge);
     setBtnColor(pNewEdgeBtn);
 
-    pVbox->addWidget(pNewNodeBtn);
-    pVbox->addWidget(pNewEdgeBtn);
-    pVbox->addStretch();
-
+    pVbox1->addWidget(pNewNodeBtn);
+    pVbox1->addWidget(pNewEdgeBtn);
+    pVbox1->addStretch();
 
     pNewNodeEdit = new QLineEdit(this);
     pNewNodeEdit->setFixedWidth(w);
@@ -43,22 +44,35 @@ MainWindow::MainWindow(QWidget *parent) {
     formLayout->addRow("New edge to:", pToEdit);
     formLayout->addRow("Weight:", pWeightEdit);
 
-    pPathsMatrix = new QTableWidget(this);
-    QTableWidget **ppPMatrix = &pPathsMatrix;
-    createMatrix(ppPMatrix);
+    pGraphL = new QLabel("Graph: \n");
 
+    pVbox0->addLayout(formLayout);
+    pVbox0->addSpacing(vSpacing);
+    pVbox0->addWidget(pGraphL);
+    pVbox0->addStretch();
+
+    pWeightsL = new QLabel("Optimum Weights Matrix", this);
     pWeightMatrix = new QTableWidget(this);
     QTableWidget **ppWMatrix = &pWeightMatrix;
     createMatrix(ppWMatrix);
 
+    pPathsL = new QLabel("Optimum Paths Matrix", this);
+    pPathsMatrix = new QTableWidget(this);
+    QTableWidget **ppPMatrix = &pPathsMatrix;
+    createMatrix(ppPMatrix);
 
-    pHBox->addLayout(formLayout);
+    pVbox2->addWidget(pWeightsL);
+    pVbox2->addWidget(pWeightMatrix);
+    pVbox2->addSpacing(vSpacing);
+    pVbox2->addWidget(pPathsL);
+    pVbox2->addWidget(pPathsMatrix);
+    pVbox2->addStretch();
+
+    pHBox->addLayout(pVbox0);
     pHBox->addSpacing(hSpacing);
-    pHBox->addLayout(pVbox);
-    pHBox->addSpacing(hSpacing);
-    pHBox->addWidget(pPathsMatrix);
-    pHBox->addSpacing(hSpacing);
-    pHBox->addWidget(pWeightMatrix);
+    pHBox->addLayout(pVbox1);
+    pHBox->addSpacing(hSpacing * 5);
+    pHBox->addLayout(pVbox2);
     pHBox->addStretch();
 
     setLayout(pHBox);
@@ -66,7 +80,9 @@ MainWindow::MainWindow(QWidget *parent) {
 }
 
 MainWindow::~MainWindow() {
-    delete pVbox;
+    delete pVbox0;
+    delete pVbox1;
+    delete pVbox2;
     delete pHBox;
 
     delete pNewNodeBtn;
@@ -83,8 +99,11 @@ MainWindow::~MainWindow() {
     deleteItems(ppMatrix);
     delete pPathsMatrix;
 
+    delete pPathsL;
+    delete pWeightsL;
+    delete pGraphL;
 
-    ppMatrix= &pWeightMatrix;
+    ppMatrix = &pWeightMatrix;
     deleteItems(ppMatrix);
     delete pWeightMatrix;
 }
@@ -108,7 +127,8 @@ void MainWindow::handleNewVertex() {
     char **ptr = &message;
     socket->sendBuffer(ptr);
     string bufferReceived = socket->getBuffer();
-    std::cout<<bufferReceived<<std::endl;
+
+    updateMatrices(bufferReceived); //update matrices
 }
 
 /*!
@@ -136,15 +156,32 @@ void MainWindow::handleNewEdge() {
     char **ptr = &message;
     socket->sendBuffer(ptr);
     string bufferReceived = socket->getBuffer();
-    vector<string> elements = tokenizeString(bufferReceived,':');
-    QTableWidget ** ppMatrix = &pWeightMatrix;
-    parseToMatrix(elements[0],ppMatrix);
-    std::cout<<"first matrix"<<elements[0]<<std::endl;
 
+    updateMatrices(bufferReceived); //update matrices
 }
 
+/*!
+ * Updates matrices' values
+ * @param buffer : string
+ */
+void MainWindow::updateMatrices(string buffer) {
+    vector<string> elements = tokenizeString(buffer, ':');
+    QTableWidget **ppMatrix = &pWeightMatrix;
+    parseToMatrix(elements[0], ppMatrix);
 
+    ppMatrix = &pPathsMatrix;
+    parseToMatrix(elements[1], ppMatrix);
 
+    QString text = "Graph \n";
+    text.append( QString::fromStdString(elements[2]));
+    pGraphL->setText(text);
+    pGraphL->update();
+}
+
+/*!
+ * Set button background to gray color
+ * @param button
+ */
 void MainWindow::setBtnColor(QPushButton *button) {
     QPalette pal = button->palette();
     pal.setColor(QPalette::Button, QColor(Qt::gray));
@@ -153,11 +190,15 @@ void MainWindow::setBtnColor(QPushButton *button) {
     button->update();
 }
 
+/*!
+ * Configures new QTableWidget object
+ * @param ppMatrix
+ */
 void MainWindow::createMatrix(QTableWidget **ppMatrix) {
     QTableWidget *pMatrix = *ppMatrix;
     pMatrix->windowTitle();
     pMatrix->setWindowTitle("Minimum weights matrix");
-    pMatrix->setMinimumSize(400, 300);
+    pMatrix->setMinimumSize(500, 300);
     pMatrix->setRowCount(20);
     pMatrix->setColumnCount(20);
     pMatrix->verticalHeader()->setVisible(false);
@@ -169,32 +210,33 @@ void MainWindow::createMatrix(QTableWidget **ppMatrix) {
     pMatrix->setStyleSheet("QTableView {selection-background-color: gray;}");
     pMatrix->setGeometry(QApplication::desktop()->screenGeometry());
     setHeadersColor(ppMatrix);
-
-    //insert data
-    //pMatrix->setItem(0, 1, new QTableWidgetItem("Hello"));
-
 }
 
-void MainWindow::parseToMatrix(string s_matrix, QTableWidget** ppMatrix) {
+/*!
+ * Sets each table's cell value
+ * @param s_matrix : string
+ * @param ppMatrix : QTableWidget **
+ */
+void MainWindow::parseToMatrix(string s_matrix, QTableWidget **ppMatrix) {
     deleteItems(ppMatrix);
-    QTableWidget* pMatrix = *ppMatrix;
-    std::cout<<"debug"<<std::endl;
+    QTableWidget *pMatrix = *ppMatrix;
     vector<string> rows = tokenizeString(s_matrix, ';');
     this->rows = rows.size();
-    for(int i = 0; i < rows.size(); i++){
+    for (int i = 0; i < rows.size(); i++) {
         vector<string> columns = tokenizeString(rows[i], '|');
         this->cols = columns.size();
-        for(int j = 0; j < columns.size(); j++){
+        for (int j = 0; j < columns.size(); j++) {
             QTableWidgetItem *item = new QTableWidgetItem();
             QString text = QString::fromStdString(columns[j]);
             item->setText(text);
-            pMatrix->setItem(i,j,item);
-            std::cout<<columns[j]<<std::endl;
+            pMatrix->setItem(i, j, item);
+            std::cout << columns[j] << std::endl;
         }
     }
     setHeadersColor(ppMatrix);
     pMatrix->update();
 }
+
 /*!
  * Sets gray background to the first row and first column of the table
  * @param ppMatrix : QTableWidget
@@ -211,32 +253,14 @@ void MainWindow::setHeadersColor(QTableWidget **ppMatrix) {
 
 
 /*!
- * Deletes vertical and horizontal headers
- * @param ppMatrix
- */
-void MainWindow::deleteHeaders(QTableWidget **ppMatrix){
-    QTableWidget *pMatrix = *ppMatrix;
-    int col = pMatrix->columnCount();
-    int row = pMatrix->rowCount();
-    for (int j = 0; j < col; j++) {
-        QTableWidgetItem *item = pMatrix->item(0,j);
-        delete item;
-    }
-    for (int i = 0; i < row; i++) {
-        QTableWidgetItem *item = pMatrix->item(i,0);
-        delete item;
-    }
-}
-
-/*!
  * Deletes all table widgets items
  * @param ppMatrix
  */
 void MainWindow::deleteItems(QTableWidget **ppMatrix) {
     QTableWidget *pMatrix = *ppMatrix;
-    for (int i = 0; i < rows; i++){
-        for (int j = 0; j < cols; j++){
-            QTableWidgetItem *item = pMatrix->item(i,j);
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            QTableWidgetItem *item = pMatrix->item(i, j);
             delete item;
         }
     }
@@ -248,11 +272,10 @@ void MainWindow::deleteItems(QTableWidget **ppMatrix) {
  * @param s_buffer
  */
 vector<string> MainWindow::tokenizeString(string s_buffer, char delim) {
-    vector <string> tokens;
+    vector<string> tokens;
     stringstream check1(s_buffer);
     string intermediate;
-    while(getline(check1, intermediate, delim))
-    {
+    while (getline(check1, intermediate, delim)) {
         tokens.push_back(intermediate);
     }
     return tokens;

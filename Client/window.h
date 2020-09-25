@@ -30,6 +30,10 @@ private slots:
     void handleNewEdge();
 
 private:
+    QLabel *pWeightsL;
+    QLabel *pPathsL;
+    QLabel *pGraphL;
+
     QPushButton *pNewNodeBtn;
     QPushButton *pNewEdgeBtn;
 
@@ -39,17 +43,15 @@ private:
     QLineEdit *pWeightEdit;
     QFormLayout *formLayout;
 
-    QVBoxLayout *pVbox;
+    QVBoxLayout *pVbox0;
+    QVBoxLayout *pVbox1;
+    QVBoxLayout *pVbox2;
     QHBoxLayout *pHBox;
 
     QLabel *pGraphLabel;
     QTableWidget *pWeightMatrix;
     QTableWidget *pPathsMatrix;
 
-    QStringList m_TableHeader;
-
-    string s_graph;
-    string s_matrix;
 
     int vSpacing = 8;
     int hSpacing = 6;
@@ -66,7 +68,7 @@ private:
     void parseToMatrix(string s_matrix, QTableWidget** ppMatrix);
 
     void deleteItems(QTableWidget ** ppMatrix);
-    void deleteHeaders(QTableWidget **ppMatrix);
+    void updateMatrices(string buffer);
 
 
 public:

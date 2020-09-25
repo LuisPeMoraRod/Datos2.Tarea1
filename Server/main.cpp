@@ -215,6 +215,6 @@ string handleMessage(vector<string> message, Vertex **ppVertex, VertexList **ppG
 
     }
     FloydWarshall *pMatrix = new FloydWarshall(pGraph);
-    ans = pMatrix->getMatrix();
+    ans = pMatrix->getMatrices();
     return ans;
 }
