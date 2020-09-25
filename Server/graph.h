@@ -5,7 +5,8 @@
 #pragma once
 
 #include <string>
-
+#include <stdlib.h>
+#include<iostream>
 using namespace std;
 
 /*!
@@ -114,4 +115,5 @@ public:
     Vertex *getPLast() const;
 
     Vertex* getPVertex(int id);
+    Vertex * getPVertex(string name);
 };

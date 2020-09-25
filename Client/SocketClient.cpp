@@ -2,6 +2,7 @@
 // Created by luispedro on 23/9/20.
 //
 
+#include <string>
 #include "SocketClient.h"
 
 SocketClient::SocketClient() {
@@ -37,12 +38,24 @@ int SocketClient::create() {
 
 void SocketClient::sendBuffer(char** message) {
     send(sock , *message , strlen(*message) , 0 );
-    printf("Message sent from the client\n");
+    printf("Message sent from the server\n");
     valread = read( sock , buffer, 1024);
-    printf("%s\n",buffer );
-
+    //printf("%s\n",buffer );
 }
 
 SocketClient::~SocketClient() {
     delete this;
+}
+
+string SocketClient::getBuffer() {
+    string s_buffer = this->charToString(buffer, 2048);
+    return s_buffer;
+}
+
+string SocketClient::charToString(char *c, int size) {
+    string s;
+    for (int i = 0; i < size; i++) {
+        s += c[i];
+    }
+    return s;
 }

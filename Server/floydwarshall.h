@@ -21,6 +21,7 @@ private:
     void setDistances(int **matrix);
     void setPaths(string **matrix);
 
+    string setHeaders();
     void sort();
 
 public:
@@ -29,6 +30,7 @@ public:
     ~FloydWarshall();
 
     void printMatrix();
+    string getMatrix();
 
     int **getDistMatrix() const;
 

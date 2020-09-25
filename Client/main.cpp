@@ -7,7 +7,7 @@ int main(int argc, char *argv[]) {
 
     MainWindow window;
 
-    window.resize(600, 190);
+    window.resize(1250, 200);
     window.setWindowTitle("Floyd-Warshall Algorithm Test");
     window.show();
 

@@ -96,7 +96,7 @@ void FloydWarshall::printMatrix() {
 }
 
 void FloydWarshall::sort() {
-    Vertex* pVertex;
+    Vertex *pVertex;
     for (int k = 0; k < vertices; k++) {
         for (int i = 0; i < vertices; i++) {
             for (int j = 0; j < vertices; j++) {
@@ -117,6 +117,43 @@ int **FloydWarshall::getDistMatrix() const {
 string **FloydWarshall::getPathsMatrix() const {
     return pathsMatrix;
 }
+
+string FloydWarshall::getMatrix() {
+    string msg;
+    for (int i = -1; i < this->vertices; i++) {
+        if (i < 0)
+            msg = setHeaders();
+        else {
+            for (int j = -1; j < this->vertices; j++) {
+                if (j<0){
+                    msg.append(pGraph->getPVertex(i)->getName());
+                    msg.append("|");
+                }
+                else{
+                    int value = distMatrix[i][j] == 100000000 ? -1 : distMatrix[i][j];
+                    msg.append(to_string(value));
+                    msg.append("|");
+                }
+            }
+            msg.append(";");
+        }
+    }
+    msg.append(":");
+    return msg;
+}
+
+string FloydWarshall::setHeaders() {
+    string headers = string();
+    headers.append(" ");
+    headers.append("|");
+    for (int i = 0; i < this->vertices; i++) {
+        headers.append(pGraph->getPVertex(i)->getName());
+        headers.append("|");
+    }
+    headers.append(";");
+    return headers;
+}
+
 
 
 

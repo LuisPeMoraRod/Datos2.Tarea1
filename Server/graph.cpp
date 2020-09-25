@@ -168,7 +168,7 @@ Vertex *VertexList::getPLast() const {
 bool VertexList::contains(string name) {
     Vertex *ptr = this->pHead;
     for (int i = 0; i < this->size; i++) {
-        if (name.compare(ptr->getName()) == 0) {
+        if ( ptr->getName().compare(name)== 0) {
             return true;
         }
         ptr = ptr->getPNext();
@@ -209,6 +209,17 @@ Vertex* VertexList::getPVertex(int id) {
         if (pVertex->getId() == id)
             return pVertex;
         pVertex = pVertex->getPNext();
+    }
+    return nullptr;
+}
+
+Vertex *VertexList::getPVertex(string name) {
+    Vertex *ptr = this->pHead;
+    for (int i = 0; i < this->size; i++) {
+        if ( ptr->getName().compare(name)== 0) {
+            return ptr;
+        }
+        ptr = ptr->getPNext();
     }
     return nullptr;
 }
