@@ -30,6 +30,7 @@ public:
 
     void SetNext(AdjacentNode *pNext);
 
+    void setWeight(int weight);
 };
 
 /*!

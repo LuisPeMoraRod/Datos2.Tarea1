@@ -186,7 +186,7 @@ string handleMessage(vector<string> message, Vertex **ppVertex, VertexList **ppG
     AdjacentNode *pNode = *ppNode;
     if (message[0].compare("V") == 0) {
         if (pGraph->contains(message[1])) {
-            return "Error:0"; //vertex already exists
+            return "Error: vertex already exists:";
         }
         pVertex = new Vertex(message[1]);
         pGraph->insertEnd(pVertex);
@@ -195,10 +195,13 @@ string handleMessage(vector<string> message, Vertex **ppVertex, VertexList **ppG
         first = message[1];
         second = message[2];
         if (!pGraph->contains(first)) {
-            ans = "Error:1"; //first vertex doesn't exist
+            ans = "Error: first vertex doesn't exist:";
             return ans;
         } else if (!pGraph->contains(second)) {
-            ans = "Error:2"; //second vertex doesn't exist
+            ans = "Error: second vertex doesn't exist:";
+            return ans;
+        }else if(first.compare(second) == 0){
+            ans = "Error: both vertices can't be the same:";
             return ans;
         }
 
@@ -209,7 +212,7 @@ string handleMessage(vector<string> message, Vertex **ppVertex, VertexList **ppG
             NodesList *nodeList = pVertex->getPNodesList();
             nodeList->insertEnd(pNode);
         } catch (std::exception) {
-            ans = "Error:3";
+            ans = "Error: can't convert weight to integer:";//integer required
             return ans;
         }
 

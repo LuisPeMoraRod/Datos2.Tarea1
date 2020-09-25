@@ -31,6 +31,10 @@ int AdjacentNode::getWeight() const {
     return weight;
 }
 
+void AdjacentNode::setWeight(int weight) {
+    AdjacentNode::weight = weight;
+}
+
 ///////////////////// NodesList //////////////////////////////
 NodesList::NodesList() {
     this->size = 0;
@@ -57,14 +61,19 @@ AdjacentNode *NodesList::getPLast() const {
 }
 
 void NodesList::insertEnd(AdjacentNode *pNode) {
+    string name = pNode->getName();
+    int w = pNode->getWeight();
     if (size == 0) {
         this->pHead = pNode;
         this->pLast = pNode;
         this->size++;
-    } else {
+    } else if (!contains(name)){
         this->pLast->SetNext(pNode);
         this->pLast = pNode;
         this->size++;
+    }else{
+        AdjacentNode* pNodeOld = getNode(name);
+        pNodeOld->setWeight(w);
     }
 }
 

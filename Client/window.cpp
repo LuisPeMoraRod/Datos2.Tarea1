@@ -112,11 +112,13 @@ MainWindow::~MainWindow() {
  * Communicates with the server via socket to send the new vertex of the graph.
  */
 void MainWindow::handleNewVertex() {
+
     SocketClient *socket = new SocketClient();
 
     std::string s_message;
     std::string prefix = "V:";
     std::string name = pNewNodeEdit->text().toUtf8().constData();
+    pNewNodeEdit->clear();
     s_message.append(prefix);
     s_message.append(name);
     int n = s_message.length();
@@ -135,6 +137,8 @@ void MainWindow::handleNewVertex() {
  * Communicates with the server via socket to send the info for the new edge in the graph
  */
 void MainWindow::handleNewEdge() {
+
+
     SocketClient *socket = new SocketClient();
 
     std::string s_message;
@@ -143,6 +147,9 @@ void MainWindow::handleNewEdge() {
     std::string toName = pToEdit->text().toUtf8().constData();
     std::string fromName = pFromEdit->text().toUtf8().constData();
     std::string weight = pWeightEdit->text().toUtf8().constData();
+    pFromEdit->clear();
+    pToEdit->clear();
+    pWeightEdit->clear();
     s_message.append(prefix);
     s_message.append(fromName);
     s_message.append(points);
@@ -166,16 +173,23 @@ void MainWindow::handleNewEdge() {
  */
 void MainWindow::updateMatrices(string buffer) {
     vector<string> elements = tokenizeString(buffer, ':');
-    QTableWidget **ppMatrix = &pWeightMatrix;
-    parseToMatrix(elements[0], ppMatrix);
+    if (elements[0].compare("Error") == 0) {
+        QString text = QString::fromStdString(elements[0])+":";
+        text.append(QString::fromStdString(elements[1]));
+        pGraphL->setText(text);
+        pGraphL->update();
+    } else {
+        QTableWidget **ppMatrix = &pWeightMatrix;
+        parseToMatrix(elements[0], ppMatrix);
 
-    ppMatrix = &pPathsMatrix;
-    parseToMatrix(elements[1], ppMatrix);
+        ppMatrix = &pPathsMatrix;
+        parseToMatrix(elements[1], ppMatrix);
 
-    QString text = "Graph \n";
-    text.append( QString::fromStdString(elements[2]));
-    pGraphL->setText(text);
-    pGraphL->update();
+        QString text = "Graph \n";
+        text.append(QString::fromStdString(elements[2]));
+        pGraphL->setText(text);
+        pGraphL->update();
+    }
 }
 
 /*!
