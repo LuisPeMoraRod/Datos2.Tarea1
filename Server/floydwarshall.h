@@ -20,6 +20,7 @@ private:
 
     void setDistances(int **matrix);
     void setPaths(string **matrix);
+    void setNonVisitedPaths();
 
     string setHeaders();
     void executeFW();
@@ -35,7 +36,6 @@ public:
     string getMatrices();
 
     int **getDistMatrix() const;
-
 
     string getGraphRepresentation(string **ppMsg);
 };

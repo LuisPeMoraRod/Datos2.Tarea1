@@ -99,6 +99,15 @@ void FloydWarshall::setPaths(string **matrix) {
     }
 }
 
+void FloydWarshall::setNonVisitedPaths() {
+    for(int i = 0; i < vertices; i++){
+        for(int j = 0; j < vertices; j++){
+            if(distMatrix[i][j] == 100000000)
+                pathsMatrix[i][j] = "-";
+        }
+    }
+}
+
 /*!
  * Prints both matrices in console
  */
@@ -137,6 +146,7 @@ void FloydWarshall::executeFW() {
             }
         }
     }
+    setNonVisitedPaths();
 }
 
 /*!
@@ -224,4 +234,5 @@ string FloydWarshall::getGraphRepresentation(string **ppMsg) {
         pMsg->append("\n");
     }
     pMsg->append(":");
+    return *pMsg;
 }

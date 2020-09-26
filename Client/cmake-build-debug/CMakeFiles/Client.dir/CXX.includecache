@@ -6,6 +6,12 @@
 
 #IncludeRegexTransform: 
 
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.cpp
+string
+-
+SocketClient.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.h
+
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.h
 stdio.h
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/stdio.h
