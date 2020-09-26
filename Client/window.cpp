@@ -7,6 +7,9 @@
 #include <QLabel>
 #include <QLineEdit>
 
+/*!
+ * Constructor method. Create GUI main window
+ */
 MainWindow::MainWindow(QWidget *parent) {
     pVbox0 = new QVBoxLayout();
     pVbox1 = new QVBoxLayout();
@@ -47,7 +50,7 @@ MainWindow::MainWindow(QWidget *parent) {
     pGraphL = new QLabel("Graph: \n");
 
     pVbox0->addLayout(formLayout);
-    pVbox0->addSpacing(vSpacing);
+    pVbox0->addSpacing(vSpacing*4);
     pVbox0->addWidget(pGraphL);
     pVbox0->addStretch();
 
@@ -79,6 +82,9 @@ MainWindow::MainWindow(QWidget *parent) {
 
 }
 
+/*!
+ * Destructor method
+ */
 MainWindow::~MainWindow() {
     delete pVbox0;
     delete pVbox1;
@@ -114,6 +120,12 @@ MainWindow::~MainWindow() {
 void MainWindow::handleNewVertex() {
 
     SocketClient *socket = new SocketClient();
+    if (socket->getState() == -1){
+        QString text = "Error: connection with server failed";
+        this->pGraphL->setText(text);
+        pGraphL->update();
+        return;
+    }
 
     std::string s_message;
     std::string prefix = "V:";
@@ -185,7 +197,7 @@ void MainWindow::updateMatrices(string buffer) {
         ppMatrix = &pPathsMatrix;
         parseToMatrix(elements[1], ppMatrix);
 
-        QString text = "Graph \n";
+        QString text = "Graph: \n\n";
         text.append(QString::fromStdString(elements[2]));
         pGraphL->setText(text);
         pGraphL->update();

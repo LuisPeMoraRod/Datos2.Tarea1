@@ -5,12 +5,19 @@
 #include <string>
 #include "SocketClient.h"
 
+/*!
+ * Constructor method
+ */
 SocketClient::SocketClient() {
     sock = 0;
     buffer[1024] = {0};
     state = create();
 }
 
+/*!
+ * Attempts to create socket. Returns 0 if succeeded or -1 if failed
+ * @return state : int
+ */
 int SocketClient::create() {
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
@@ -36,26 +43,50 @@ int SocketClient::create() {
     return 0;
 }
 
+/*!
+ * Sends message to server
+ * @param message : char**
+ */
 void SocketClient::sendBuffer(char** message) {
     send(sock , *message , strlen(*message) , 0 );
     printf("Message sent from the server\n");
     valread = read( sock , buffer, 1024);
-    //printf("%s\n",buffer );
 }
 
+/*!
+ * Destructor method
+ */
 SocketClient::~SocketClient() {
     delete this;
 }
 
+/*!
+ * buffer getter
+ * @return s_buffer : string
+ */
 string SocketClient::getBuffer() {
     string s_buffer = this->charToString(buffer, 2048);
     return s_buffer;
 }
 
+/*!
+ * Parse to string from char type
+ * @param c : char*
+ * @param size : int
+ * @return s : string
+ */
 string SocketClient::charToString(char *c, int size) {
     string s;
     for (int i = 0; i < size; i++) {
         s += c[i];
     }
     return s;
+}
+
+/*!
+ * state getter
+ * @return state : int
+ */
+int SocketClient::getState() const {
+    return state;
 }

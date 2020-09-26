@@ -25,5 +25,7 @@ public:
     int create();
     void sendBuffer(char** message);
     string getBuffer();
+
+    int getState() const;
 };
 

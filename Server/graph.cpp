@@ -4,17 +4,25 @@
 
 #include "graph.h"
 
-
-///////////////////// AdjacentNode /////////////////////////
+/*!
+ * Adjacent node constructor method
+ * @param name
+ * @param weight
+ */
 AdjacentNode::AdjacentNode(string name, int weight) {
     this->name = name;
     this->weight = weight;
 }
-
+/*!
+ * Destructor method
+ */
 AdjacentNode::~AdjacentNode() {
     delete this;
 }
 
+//
+//Setters and getters
+//
 string AdjacentNode::getName() const {
     return this->name;
 }
@@ -35,13 +43,19 @@ void AdjacentNode::setWeight(int weight) {
     AdjacentNode::weight = weight;
 }
 
-///////////////////// NodesList //////////////////////////////
+
+/*!
+ * NodesList constructor method
+ */
 NodesList::NodesList() {
     this->size = 0;
     this->pHead = nullptr;
     this->pLast = nullptr;
 }
 
+/*!
+ * Destructor method
+ */
 NodesList::~NodesList() {
     delete pLast;
     delete pHead;
@@ -60,6 +74,10 @@ AdjacentNode *NodesList::getPLast() const {
     return pLast;
 }
 
+/*!
+ * Inserts node at the end of the list or edits node if it already exists
+ * @param pNode : AdjacentNode *
+ */
 void NodesList::insertEnd(AdjacentNode *pNode) {
     string name = pNode->getName();
     int w = pNode->getWeight();
@@ -77,6 +95,11 @@ void NodesList::insertEnd(AdjacentNode *pNode) {
     }
 }
 
+/*!
+ * Checks if a node with a specific name exists in the list
+ * @param name  : string
+ * @return contains : boolean
+ */
 bool NodesList::contains(string name) {
     AdjacentNode *ptr = this->pHead;
     for (int i = 0; i < this->size; i++) {
@@ -88,17 +111,22 @@ bool NodesList::contains(string name) {
     return false;
 }
 
+/*!
+ * Searches for vertex with specific name and returns pointer pointing to it
+ * @param name : string
+ * @return pNode : AdjacentNode *
+ */
 AdjacentNode *NodesList::getNode(string name) {
-    AdjacentNode *ptr = this->pHead;
+    AdjacentNode *pNode = this->pHead;
     for (int i = 0; i < this->size; i++) {
-        if (name.compare(ptr->getName()) == 0) {
-            return ptr;
+        if (name.compare(pNode->getName()) == 0) {
+            return pNode;
         }
-        ptr = ptr->getPNext();
+        pNode = pNode->getPNext();
     }
     return nullptr;
 }
-///////////////////// Vertex //////////////////////////////
+
 /*!
  * Constructor method
  * @param name : string
@@ -129,7 +157,6 @@ NodesList *Vertex::getPNodesList() const { return this->pNodesList; }
 int Vertex::getId() const { return id; }
 
 
-///////////////////// VertexList //////////////////////////////
 /*!
  * Private constructor method
  * @param pFirst : Vertex*
@@ -212,6 +239,11 @@ VertexList::~VertexList() {
     delete this;
 }
 
+/*!
+ * Searches for vertex with specific id and returns pointer pointing to it
+ * @param id : int
+ * @return pVertex : Vertex*
+ */
 Vertex* VertexList::getPVertex(int id) {
     Vertex* pVertex = pHead;
     for (int i = 0; i < this->size; i++){
@@ -222,6 +254,11 @@ Vertex* VertexList::getPVertex(int id) {
     return nullptr;
 }
 
+/*!
+ * Searches for vertex with specific name and returns pointer pointing to it
+ * @param id : int
+ * @return pVertex : Vertex*
+ */
 Vertex *VertexList::getPVertex(string name) {
     Vertex *ptr = this->pHead;
     for (int i = 0; i < this->size; i++) {

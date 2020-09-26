@@ -22,7 +22,7 @@ private:
     void setPaths(string **matrix);
 
     string setHeaders();
-    void sort();
+    void executeFW();
 
     string **getPathsMatrix() const;
 

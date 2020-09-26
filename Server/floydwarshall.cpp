@@ -5,6 +5,10 @@
 #include "floydwarshall.h"
 #include <iostream>
 
+/*!
+ * Constructor method. Receives a VertexList pointer to execute the floyd wharshall algorithm
+ * @param pGraph : VertexList *
+ */
 FloydWarshall::FloydWarshall(VertexList *pGraph) {
     this->pGraph = pGraph;
     this->vertices = pGraph->getSize();
@@ -20,9 +24,12 @@ FloydWarshall::FloydWarshall(VertexList *pGraph) {
     setPaths(pathsMatrix);
     setDiag(pathsMatrix);
 
-    sort();
+    executeFW();
 }
 
+/*!
+ * Destructor method
+ */
 FloydWarshall::~FloydWarshall() {
     for (int i = 0; i < vertices; i++)
         delete distMatrix[i];
@@ -35,18 +42,30 @@ FloydWarshall::~FloydWarshall() {
     delete this;
 }
 
+/*!
+ * Sets diagonal for weights matrix
+ * @param matrix : int **
+ */
 void FloydWarshall::setDiag(int **matrix) {
     for (int i = 0; i < this->vertices; i++) {
         matrix[i][i] = 0;
     }
 }
 
+/*!
+ * Sets diagonal for paths matrix
+ * @param matrix : string **
+ */
 void FloydWarshall::setDiag(string **matrix) {
     for (int i = 0; i < this->vertices; i++) {
         matrix[i][i] = "-";
     }
 }
 
+/*!
+ * Sets initial distances in matrix before floyd-warshall algorithm is executed
+ * @param matrix : int**
+ */
 void FloydWarshall::setDistances(int **matrix) {
     Vertex *pVertex;
     Vertex *pVertexTemp;
@@ -66,6 +85,10 @@ void FloydWarshall::setDistances(int **matrix) {
     }
 }
 
+/*!
+ * Sets initial paths in matrix before floyd-warshall algorithm is executed
+ * @param matrix : string**
+ */
 void FloydWarshall::setPaths(string **matrix) {
     Vertex *pVertex;
     for (int i = 0; i < vertices; i++) {
@@ -76,6 +99,9 @@ void FloydWarshall::setPaths(string **matrix) {
     }
 }
 
+/*!
+ * Prints both matrices in console
+ */
 void FloydWarshall::printMatrix() {
     for (int i = 0; i < vertices; i++) {
         for (int j = 0; j < vertices; j++) {
@@ -95,7 +121,10 @@ void FloydWarshall::printMatrix() {
 
 }
 
-void FloydWarshall::sort() {
+/*!
+ * Executes floyd-warshall algorithm and edits optimum weights and paths matrices
+ */
+void FloydWarshall::executeFW() {
     Vertex *pVertex;
     for (int k = 0; k < vertices; k++) {
         for (int i = 0; i < vertices; i++) {
@@ -110,44 +139,53 @@ void FloydWarshall::sort() {
     }
 }
 
-
-
+/*!
+ * Generates string to send via socket.
+ * Matrices separated by ':' delimiter
+ * Rows separated by ';' delimiter
+ * Individual cells separated by '|' delimiter
+ * @return message : string
+ */
 string FloydWarshall::getMatrices() {
-    string msg;
+    string message;
     for (int k = 0; k < 2; k++) {
         for (int i = -1; i < this->vertices; i++) {
             if (i < 0)
-                msg .append(setHeaders());
+                message.append(setHeaders());
             else {
                 for (int j = -1; j < this->vertices; j++) {
                     if (j < 0) {
-                        msg.append(pGraph->getPVertex(i)->getName());
-                        msg.append("|");
+                        message.append(pGraph->getPVertex(i)->getName());
+                        message.append("|");
                     } else {
                         string value;
                         if (k == 0) {
                             value = distMatrix[i][j] == 100000000 ? "-" : to_string(distMatrix[i][j]);
-                            msg.append(value);
+                            message.append(value);
 
                         } else if (k == 1) {
                             value = pathsMatrix[i][j];
-                            msg.append(value);
+                            message.append(value);
                         }
-                        msg.append("|");
+                        message.append("|");
                     }
                 }
-                msg.append(";");
+                message.append(";");
             }
         }
-        msg.append(":");
+        message.append(":");
     }
-    string *pMsg = &msg;
-    string ** ppMsg = &pMsg;
-    msg.append(getGraphRepresentation(ppMsg));
-    std::cout<<msg<<std::endl;
-    return msg;
+    string *pMsg = &message;
+    string **ppMsg = &pMsg;
+    message.append(getGraphRepresentation(ppMsg));
+    std::cout << message << std::endl;
+    return message;
 }
 
+/*!
+ * Sets horizontal headers of the matrices
+ * @return headers : string
+ */
 string FloydWarshall::setHeaders() {
     string headers = string();
     headers.append(" ");
@@ -160,20 +198,25 @@ string FloydWarshall::setHeaders() {
     return headers;
 }
 
-string FloydWarshall::getGraphRepresentation(string ** ppMsg){
-    string* pMsg = * ppMsg;
-    string nameVrtx;
-    NodesList* pNodesList;
-    AdjacentNode* pNode;
-    for(int i = 0; i < vertices; i++){
-        nameVrtx = pGraph->getPVertex(i)->getName();
-        pMsg->append(nameVrtx);
+/*!
+ * Generates string representation of the graph to be sent to the client
+ * @param ppMsg : string **
+ * @return
+ */
+string FloydWarshall::getGraphRepresentation(string **ppMsg) {
+    string *pMsg = *ppMsg;
+    string vertexName;
+    NodesList *pNodesList;
+    AdjacentNode *pNode;
+    for (int i = 0; i < vertices; i++) {
+        vertexName = pGraph->getPVertex(i)->getName();
+        pMsg->append(vertexName);
         pMsg->append(" ==> ");
         pNodesList = pGraph->getPVertex(i)->getPNodesList();
         pNode = pNodesList->getPHead();
-        for(int j = 0; j < pNodesList->getSize(); j++){
-            pMsg->append("("+pNode->getName()+","+to_string(pNode->getWeight())+") ");
-            if (j<pNodesList->getSize()-1){
+        for (int j = 0; j < pNodesList->getSize(); j++) {
+            pMsg->append("(" + pNode->getName() + "," + to_string(pNode->getWeight()) + ") ");
+            if (j < pNodesList->getSize() - 1) {
                 pMsg->append("- ");
             }
             pNode = pNode->getPNext();
@@ -182,10 +225,3 @@ string FloydWarshall::getGraphRepresentation(string ** ppMsg){
     }
     pMsg->append(":");
 }
-
-
-
-
-
-
-

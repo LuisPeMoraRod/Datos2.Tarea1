@@ -135,9 +135,6 @@ int main(int argc, char *argv[]) {
         printf("Answer message sent\n");
     }
 
-    FloydWarshall *pMatrix = new FloydWarshall(pGraph);
-    pMatrix->printMatrix();
-
     return 0;
 }
 
@@ -153,11 +150,8 @@ string charToString(char *c, int size) {
 char *stringToChar(string s) {
     int n = s.length();
 
-    // declaring character array
     char char_array[n + 1];
 
-    // copying the contents of the
-    // string to char array
     strcpy(char_array, s.c_str());
     return char_array;
 }
@@ -212,7 +206,7 @@ string handleMessage(vector<string> message, Vertex **ppVertex, VertexList **ppG
             NodesList *nodeList = pVertex->getPNodesList();
             nodeList->insertEnd(pNode);
         } catch (std::exception) {
-            ans = "Error: can't convert weight to integer:";//integer required
+            ans = "Error: couldn't convert weight to integer:";//integer required
             return ans;
         }
 
