@@ -100,9 +100,9 @@ void FloydWarshall::setPaths(string **matrix) {
 }
 
 void FloydWarshall::setNonVisitedPaths() {
-    for(int i = 0; i < vertices; i++){
-        for(int j = 0; j < vertices; j++){
-            if(distMatrix[i][j] == 100000000)
+    for (int i = 0; i < vertices; i++) {
+        for (int j = 0; j < vertices; j++) {
+            if (distMatrix[i][j] == 100000000)
                 pathsMatrix[i][j] = "-";
         }
     }
@@ -135,6 +135,7 @@ void FloydWarshall::printMatrix() {
  */
 void FloydWarshall::executeFW() {
     Vertex *pVertex;
+    Vertex *pRow;
     for (int k = 0; k < vertices; k++) {
         for (int i = 0; i < vertices; i++) {
             for (int j = 0; j < vertices; j++) {
@@ -142,6 +143,7 @@ void FloydWarshall::executeFW() {
                     distMatrix[i][j] = distMatrix[i][k] + distMatrix[k][j];
                     pVertex = pGraph->getPVertex(k);
                     pathsMatrix[i][j] = pVertex->getName();
+
                 }
             }
         }
