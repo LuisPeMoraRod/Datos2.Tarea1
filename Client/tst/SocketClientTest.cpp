@@ -38,6 +38,7 @@ Server::~Server() {
     delete this;
 }
 
+
 /*!
  * Attempts to create socket attaching it to port 8080. Returns 0 in case of success
  * @return int
@@ -84,14 +85,14 @@ int Server::CreateSocket() {
  */
 void Server::Listen()
 {
-
+    char * buffer[1024]= {0};
     if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
                              (socklen_t*)&addr_len)) < 0)
     {
         perror("accept");
         exit(EXIT_FAILURE);
     }
-    char * buffer[1024] = {0};
+
     char* hello = "Hello from the server";
     val_read = read(new_socket , buffer, 1024);
     printf("%s\n",buffer );
@@ -135,7 +136,7 @@ TEST_F(SocketClientTest, CommunicationWithServer){
     char * pMessage = "Testing hello from client";
     char** ppMessage = &pMessage;
     socket->SendBuffer(ppMessage);
-    const char* msg = socket->GetBufferChar();
-    ASSERT_STREQ(msg, "Hello from the server");
+    const char* msgFromServer = socket->GetBufferChar();
+    ASSERT_STREQ(msgFromServer, "Hello from the server");
     th.join();
 }
