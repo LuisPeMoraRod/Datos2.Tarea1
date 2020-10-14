@@ -99,9 +99,11 @@ class SocketClientTest : public ::testing::Test{
 protected:
     Server* server;
     SocketClient * socket;
+    const char * ip_address;
     void SetUp() override{
         server = new Server();
         socket = new SocketClient();
+        ip_address = "127.0.0.1";
     }
     void TearDown() override{
     }
@@ -109,13 +111,30 @@ protected:
     void ServerThreadInit(){
         server->CreateSocket();
         std::thread th(&Server::Listen, server);
-        th.join();
     }
 
 };
+TEST_F(SocketClientTest, SuccessfulConnection){
+
+    ASSERT_EQ(socket->Create(ip_address),0);
+}
 
 TEST_F(SocketClientTest, HandleInvalidIp){
     ASSERT_EQ(socket->Create("address"),-1);
+    ASSERT_EQ(socket->Create("127.0.0"),-1);
 }
+
+TEST_F(SocketClientTest, ServerNotRunning){
+    ASSERT_EQ(socket->Create(ip_address),-2);
+}
+
+TEST_F(SocketClientTest, IpAddressUnavailable){
+    SocketClient * first_socket = new SocketClient();
+    first_socket->Create(ip_address);
+    ASSERT_EQ(socket->Create(ip_address),-2);
+}
+
+
+
 
 
