@@ -10,6 +10,7 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
+#include "string"
 #define PORT 8080
 #include <thread>
 
@@ -20,6 +21,7 @@ class Server {
 private:
     int server_fd, new_socket, val_read, opt, addr_len;
     struct sockaddr_in address;
+    thread th;
 
 public:
     Server();
@@ -82,6 +84,7 @@ int Server::CreateSocket() {
  */
 void Server::Listen()
 {
+
     if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
                              (socklen_t*)&addr_len)) < 0)
     {
@@ -110,14 +113,7 @@ protected:
     void TearDown() override{
     }
 
-    void ServerThreadInit(){
-        server->CreateSocket();
-        //std::thread th(&Server::Listen, server);
-    }
-
 };
-
-
 
 TEST_F(SocketClientTest, ServerNotRunning){
     ASSERT_EQ(socket->Create(ip_address),-2);
@@ -131,14 +127,15 @@ TEST_F(SocketClientTest, HandleInvalidIp){
 TEST_F(SocketClientTest, SuccessfulConnection){
     server->CreateSocket();
     ASSERT_EQ(socket->Create(ip_address),0);
-
 }
-
-
-
-
-
-
-
-
-
+TEST_F(SocketClientTest, CommunicationWithServer){
+    server->CreateSocket();
+    std::thread th(&Server::Listen, server);//Thread to run the server
+    socket->Create(ip_address);
+    char * pMessage = "Testing hello from client";
+    char** ppMessage = &pMessage;
+    socket->SendBuffer(ppMessage);
+    const char* msg = socket->GetBufferChar();
+    ASSERT_STREQ(msg, "Hello from the server");
+    th.join();
+}

@@ -135,7 +135,7 @@ bool MainWindow::IsConnected(int state) {
 void MainWindow::handleNewVertex() {
     SocketClient *socket = new SocketClient();
 
-    if(IsConnected(socket->getState())) {
+    if(IsConnected(socket->GetState())) {
         std::string s_message;
         std::string prefix = "V:";
         std::string name = pNewNodeEdit->text().toUtf8().constData();
@@ -148,8 +148,8 @@ void MainWindow::handleNewVertex() {
 
         char *message = c_message;
         char **ptr = &message;
-        socket->sendBuffer(ptr);
-        string bufferReceived = socket->getBuffer();
+        socket->SendBuffer(ptr);
+        string bufferReceived = socket->GetBuffer();
 
         updateMatrices(bufferReceived); //update matrices
     }
@@ -161,7 +161,7 @@ void MainWindow::handleNewVertex() {
 void MainWindow::handleNewEdge() {
     SocketClient *socket = new SocketClient();
 
-    if(IsConnected(socket->getState())) {
+    if(IsConnected(socket->GetState())) {
         std::string s_message;
         std::string prefix = "E:";
         std::string points = ":";
@@ -182,8 +182,8 @@ void MainWindow::handleNewEdge() {
         strcpy(c_message, s_message.c_str());
         char *message = c_message;
         char **ptr = &message;
-        socket->sendBuffer(ptr);
-        string bufferReceived = socket->getBuffer();
+        socket->SendBuffer(ptr);
+        string bufferReceived = socket->GetBuffer();
 
         updateMatrices(bufferReceived); //update matrices
     }

@@ -339,6 +339,8 @@ cstring
 -
 string
 ../src/string
+iostream
+-
 
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp
 socketclient.h
@@ -357,6 +359,8 @@ netinet/in.h
 -
 string.h
 -
+string
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/string
 thread
 -
 

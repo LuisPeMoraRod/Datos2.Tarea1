@@ -43,14 +43,16 @@ int SocketClient::Create(const char * ip_address) {
     return 0;
 }
 
+
 /*!
  * Sends message to server
  * @param message : char**
  */
-void SocketClient::sendBuffer(char** message) {
+void SocketClient::SendBuffer(char** message) {
     send(sock , *message , strlen(*message) , 0 );
     printf("Message sent from the server\n");
     valread = read( sock , buffer, 1024);
+    printf(buffer);
 }
 
 /*!
@@ -64,9 +66,13 @@ SocketClient::~SocketClient() {
  * buffer getter
  * @return s_buffer : string
  */
-string SocketClient::getBuffer() {
-    string s_buffer = this->charToString(buffer, 2048);
+string SocketClient::GetBuffer() {
+    string s_buffer = this->CharToString(buffer, 2048);
     return s_buffer;
+}
+
+const char * SocketClient ::GetBufferChar() {
+    return this->buffer;
 }
 
 /*!
@@ -75,7 +81,7 @@ string SocketClient::getBuffer() {
  * @param size : int
  * @return s : string
  */
-string SocketClient::charToString(char *c, int size) {
+string SocketClient::CharToString(char *c, int size) {
     string s;
     for (int i = 0; i < size; i++) {
         s += c[i];
@@ -87,6 +93,6 @@ string SocketClient::charToString(char *c, int size) {
  * state getter
  * @return state : int
  */
-int SocketClient::getState() const {
+int SocketClient::GetState() const {
     return state;
 }
