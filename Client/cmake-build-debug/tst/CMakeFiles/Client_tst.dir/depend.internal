@@ -24,3 +24,5 @@ tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o
  ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
  ../src/socketclient.h
  /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp
+tst/CMakeFiles/Client_tst.dir/main.cpp.o
+ /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp

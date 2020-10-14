@@ -24,3 +24,5 @@ tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../lib/googletest/googlete
 tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../src/socketclient.h
 tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../tst/SocketClientTest.cpp
 
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../tst/main.cpp
+

@@ -104,8 +104,6 @@ protected:
         socket = new SocketClient();
     }
     void TearDown() override{
-        delete server;
-        delete socket;
     }
 
     void ServerThreadInit(){
@@ -115,9 +113,9 @@ protected:
     }
 
 };
-/*
+
 TEST_F(SocketClientTest, HandleInvalidIp){
     ASSERT_EQ(socket->Create("address"),-1);
 }
-*/
+
 

@@ -218,6 +218,33 @@ SocketClientTest.cpp.s:
 	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.s
 .PHONY : SocketClientTest.cpp.s
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -234,6 +261,9 @@ help:
 	@echo "... SocketClientTest.o"
 	@echo "... SocketClientTest.i"
 	@echo "... SocketClientTest.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 
