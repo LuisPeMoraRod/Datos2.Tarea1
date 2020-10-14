@@ -31,6 +31,8 @@ cstring
 -
 string
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/src/string
+iostream
+-
 
 /home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/src/window.cpp
 window.h
