@@ -24,5 +24,25 @@ tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../lib/googletest/googlete
 tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../src/socketclient.h
 tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../tst/SocketClientTest.cpp
 
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-death-test.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-matchers.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-message.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-param-test.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-printers.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-test-part.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest-typed-test.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_pred_impl.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/gtest_prod.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/custom/gtest-port.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/custom/gtest-printers.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-death-test-internal.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-filepath.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-internal.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-param-util.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-port-arch.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-port.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-string.h
+tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../lib/googletest/googletest/include/gtest/internal/gtest-type-util.h
 tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../tst/main.cpp
 

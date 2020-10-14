@@ -71,12 +71,8 @@ int Server::CreateSocket() {
         perror("listen");
         exit(EXIT_FAILURE);
     }
-    if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
-                             (socklen_t*)&addr_len)) < 0)
-    {
-        perror("accept");
-        exit(EXIT_FAILURE);
-    }
+
+
     return 0;
 }
 
@@ -86,6 +82,12 @@ int Server::CreateSocket() {
  */
 void Server::Listen()
 {
+    if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
+                             (socklen_t*)&addr_len)) < 0)
+    {
+        perror("accept");
+        exit(EXIT_FAILURE);
+    }
     char * buffer[1024] = {0};
     char* hello = "Hello from the server";
     val_read = read(new_socket , buffer, 1024);
@@ -110,13 +112,15 @@ protected:
 
     void ServerThreadInit(){
         server->CreateSocket();
-        std::thread th(&Server::Listen, server);
+        //std::thread th(&Server::Listen, server);
     }
 
 };
-TEST_F(SocketClientTest, SuccessfulConnection){
 
-    ASSERT_EQ(socket->Create(ip_address),0);
+
+
+TEST_F(SocketClientTest, ServerNotRunning){
+    ASSERT_EQ(socket->Create(ip_address),-2);
 }
 
 TEST_F(SocketClientTest, HandleInvalidIp){
@@ -124,15 +128,15 @@ TEST_F(SocketClientTest, HandleInvalidIp){
     ASSERT_EQ(socket->Create("127.0.0"),-1);
 }
 
-TEST_F(SocketClientTest, ServerNotRunning){
-    ASSERT_EQ(socket->Create(ip_address),-2);
+TEST_F(SocketClientTest, SuccessfulConnection){
+    server->CreateSocket();
+    ASSERT_EQ(socket->Create(ip_address),0);
+
 }
 
-TEST_F(SocketClientTest, IpAddressUnavailable){
-    SocketClient * first_socket = new SocketClient();
-    first_socket->Create(ip_address);
-    ASSERT_EQ(socket->Create(ip_address),-2);
-}
+
+
+
 
 
 
