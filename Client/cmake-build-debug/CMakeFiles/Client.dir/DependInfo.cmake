@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.cpp" "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles/Client.dir/SocketClient.cpp.o"
-  "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/main.cpp" "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles/Client.dir/main.cpp.o"
-  "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.cpp" "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/cmake-build-debug/CMakeFiles/Client.dir/window.cpp.o"
+  "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/SocketClient.cpp" "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles/Client.dir/SocketClient.cpp.o"
+  "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/main.cpp" "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles/Client.dir/main.cpp.o"
+  "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/window.cpp" "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles/Client.dir/window.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

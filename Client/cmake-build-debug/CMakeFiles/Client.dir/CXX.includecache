@@ -6,9 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/SocketClient.cpp
+string
+-
+SocketClient.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/SocketClient.h
+
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/SocketClient.h
 stdio.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/stdio.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/stdio.h
 sys/socket.h
 -
 arpa/inet.h
@@ -18,15 +24,15 @@ unistd.h
 string.h
 -
 
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/main.cpp
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/main.cpp
 QApplication
 -
 window.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/window.h
 
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.cpp
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/window.cpp
 window.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/window.h
 QFormLayout
 -
 QLabel
@@ -34,15 +40,15 @@ QLabel
 QLineEdit
 -
 
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/window.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/window.h
 stdlib.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/stdlib.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/stdlib.h
 iostream
 -
 string
 -
 SocketClient.h
-/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Client/SocketClient.h
+/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/SocketClient.h
 bits/stdc++.h
 -
 QMainWindow
