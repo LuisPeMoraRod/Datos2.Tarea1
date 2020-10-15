@@ -23,6 +23,7 @@ private:
     VertexList *pGraph;
     Vertex *pVertex;
     AdjacentNode *pNode;
+    char* pBuffer;
 
     int server_fd, new_socket, val_read, opt, addr_len;
     struct sockaddr_in address;
@@ -31,10 +32,12 @@ public:
     SocketServer();
     ~SocketServer();
     int CreateSocket();
-    void Listen();
+    int Listen();
     string charToString(char *c, int size);
     vector<string> split(const char *str, char c);
     string handleMessage(vector<string> message);
+
+    char *getPBuffer() const;
 };
 
 

@@ -14,6 +14,10 @@ SocketServer::~SocketServer() {
     delete this;
 }
 
+char *SocketServer::getPBuffer() const {
+    return pBuffer;
+}
+
 /*!
  * Attempts to create socket attaching it to port 8080. Returns 0 in case of success
  * @return int
@@ -56,15 +60,16 @@ int SocketServer::CreateSocket() {
 /*!
  * Reads message from the client and sends a response message.
  */
-void SocketServer::Listen() {
+int SocketServer::Listen() {
     char buffer[2048] = {0};
     if ((new_socket = accept(server_fd, (struct sockaddr *) &address,
                              (socklen_t *) &addr_len)) < 0) {
         perror("accept");
-        exit(EXIT_FAILURE);
+        //exit(EXIT_FAILURE);
+        return -1;
     }
     val_read = read(new_socket, buffer, 1024);//read message from client (assigned to buffer)
-    printf("Client says: %s\n", buffer);
+    pBuffer = buffer;
 
     string s_buffer = charToString(buffer, sizeof(buffer));// buffer to string
     vector<string> vector_msg = split(buffer, ':');//tokenize message
@@ -74,7 +79,7 @@ void SocketServer::Listen() {
     const char *c_ans = answer.c_str(); //parse answer to char
     send(new_socket, c_ans, strlen(c_ans), 0);//send reply to client
 
-    printf("Answer message sent\n");
+    return 0;
 }
 
 /*!

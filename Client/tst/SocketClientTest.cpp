@@ -95,9 +95,7 @@ void Server::Listen()
 
     char* hello = "Hello from the server";
     val_read = read(new_socket , buffer, 1024);
-    printf("%s\n",buffer );
     send(new_socket , hello , strlen(hello) , 0 );
-    printf("Hello message sent\n");
 }
 
 

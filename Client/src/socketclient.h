@@ -12,7 +12,9 @@
 #include <iostream>
 #define PORT 8080
 using namespace std;
-
+/*!
+ * Class that creates a client for the server in port 8080 using sockets
+ */
 class SocketClient {
 private:
     int sock, valread,state;

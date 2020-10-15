@@ -22,8 +22,7 @@ SocketClient::SocketClient() {
 int SocketClient::Create(const char * ip_address) {
     if ((sock = socket(AF_INET, SOCK_STREAM, 0)) < 0)
     {
-        printf("\n Socket creation error \n");
-        return -1;
+        return -1;// Socket creation error
     }
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
@@ -31,14 +30,12 @@ int SocketClient::Create(const char * ip_address) {
     // Convert IPv4 and IPv6 addresses from text to binary form
     if(inet_pton(AF_INET, ip_address, &serv_addr.sin_addr)<=0)
     {
-        printf("\nInvalid address/ Address not supported \n");
-        return -1;
+        return -1; //Invalid address/ Address not supported
     }
 
     if (connect(sock, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0)
     {
-        printf("\nConnection Failed \n");
-        return -2;
+        return -2;//Connection failed
     }
     return 0;
 }
