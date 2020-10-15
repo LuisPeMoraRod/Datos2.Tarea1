@@ -7,8 +7,11 @@
 #include <stdlib.h>
 #include <netinet/in.h>
 #include <string.h>
+#include <bits/stdc++.h>
+#include <iostream>
+#include "graph.h"
+#include "floydwarshall.h"
 #define PORT 8080
-#include <thread>
 #pragma once
 using namespace std;
 
@@ -17,6 +20,10 @@ using namespace std;
  */
 class SocketServer {
 private:
+    VertexList *pGraph;
+    Vertex *pVertex;
+    AdjacentNode *pNode;
+
     int server_fd, new_socket, val_read, opt, addr_len;
     struct sockaddr_in address;
     thread th;
@@ -25,7 +32,9 @@ public:
     ~SocketServer();
     int CreateSocket();
     void Listen();
-
+    string charToString(char *c, int size);
+    vector<string> split(const char *str, char c);
+    string handleMessage(vector<string> message);
 };
 
 

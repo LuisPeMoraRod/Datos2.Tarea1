@@ -7,6 +7,7 @@
 SocketServer::SocketServer() {
     this->opt = 1;
     this->addr_len = sizeof(address);
+    pGraph = VertexList::getInstance();
 }
 
 SocketServer::~SocketServer() {
@@ -49,26 +50,104 @@ int SocketServer::CreateSocket() {
         exit(EXIT_FAILURE);
     }
 
-
     return 0;
 }
 
 /*!
  * Reads message from the client and sends a response message.
- * @return 0
  */
 void SocketServer::Listen() {
-    char * buffer[1024]= {0};
-    if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
-                             (socklen_t*)&addr_len)) < 0)
-    {
+    char buffer[2048] = {0};
+    if ((new_socket = accept(server_fd, (struct sockaddr *) &address,
+                             (socklen_t *) &addr_len)) < 0) {
         perror("accept");
         exit(EXIT_FAILURE);
     }
+    val_read = read(new_socket, buffer, 1024);//read message from client (assigned to buffer)
+    printf("Client says: %s\n", buffer);
 
-    char* hello = "Hello from the server";
-    val_read = read(new_socket , buffer, 1024);
-    printf("%s\n",buffer );
-    send(new_socket , hello , strlen(hello) , 0 );
-    printf("Hello message sent\n");
+    string s_buffer = charToString(buffer, sizeof(buffer));// buffer to string
+    vector<string> vector_msg = split(buffer, ':');//tokenize message
+
+    string answer = handleMessage(vector_msg);
+
+    const char *c_ans = answer.c_str(); //parse answer to char
+    send(new_socket, c_ans, strlen(c_ans), 0);//send reply to client
+
+    printf("Answer message sent\n");
+}
+
+/*!
+ * Parse char array to string
+ * @param c : char *
+ * @param size : int
+ * @return s : string
+ */
+string SocketServer::charToString(char *c, int size) {
+    string s;
+    for (int i = 0; i < size; i++) {
+        s += c[i];
+    }
+    return s;
+}
+
+/*!
+ * Tokenize char array into string vector, splitting the array using the char c delimiter
+ * @param str : const char *
+ * @param c : char
+ * @return result : vector<string>
+ */
+vector<string> SocketServer::split(const char *str, char c) {
+    vector<string> result;
+
+    do {
+        const char *begin = str;
+
+        while (*str != c && *str)
+            str++;
+
+        result.push_back(string(begin, str));
+    } while (0 != *str++);
+
+    return result;
+}
+
+string SocketServer::handleMessage(vector<string> message) {
+    string ans, first, second;
+    if (message[0].compare("V") == 0) {
+        if (pGraph->contains(message[1])) {
+            return "Error: vertex already exists:";
+        }
+        pVertex = new Vertex(message[1]);
+        pGraph->insertEnd(pVertex);
+        std::cout << "insert " << pGraph->getPLast()->getName() << std::endl;
+    } else if (message[0].compare("E") == 0) {
+        first = message[1];
+        second = message[2];
+        if (!pGraph->contains(first)) {
+            ans = "Error: first vertex doesn't exist:";
+            return ans;
+        } else if (!pGraph->contains(second)) {
+            ans = "Error: second vertex doesn't exist:";
+            return ans;
+        }else if(first.compare(second) == 0){
+            ans = "Error: both vertices can't be the same:";
+            return ans;
+        }
+
+        try {
+            pVertex = pGraph->getPVertex(first);
+            int weight = stoi(message[3]);
+            pNode = new AdjacentNode(second, weight);
+            NodesList *nodeList = pVertex->getPNodesList();
+            nodeList->insertEnd(pNode);
+        } catch (std::exception) {
+            ans = "Error: couldn't convert weight to integer:";//integer required
+            return ans;
+        }
+
+    }
+    FloydWarshall *pMatrix = new FloydWarshall(pGraph);
+    ans = pMatrix->getMatrices();
+    return ans;
 }
