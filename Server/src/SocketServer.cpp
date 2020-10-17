@@ -156,3 +156,7 @@ string SocketServer::handleMessage(vector<string> message) {
     ans = pMatrix->getMatrices();
     return ans;
 }
+
+VertexList *SocketServer::getPGraph() const {
+    return pGraph;
+}

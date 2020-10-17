@@ -1,5 +1,5 @@
 //
-// Created by luispedro on 14/10/20.
+// Created by Luis Pedro Morales on 14/10/20.
 //
 
 #include "socketclient.h"
@@ -47,16 +47,12 @@ int Server::CreateSocket() {
     // Creating socket file descriptor
     if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
     {
-        perror("socket failed");
-        exit(EXIT_FAILURE);
     }
 
     // Forcefully attaching socket to the port 8080
     if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
                    &opt, sizeof(opt)))
     {
-        perror("setsockopt");
-        exit(EXIT_FAILURE);
     }
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
@@ -66,13 +62,9 @@ int Server::CreateSocket() {
     if (bind(server_fd, (struct sockaddr *)&address,
              sizeof(address))<0)
     {
-        perror("bind failed");
-        exit(EXIT_FAILURE);
     }
     if (listen(server_fd, 3) < 0)
     {
-        perror("listen");
-        exit(EXIT_FAILURE);
     }
 
 
@@ -86,12 +78,8 @@ int Server::CreateSocket() {
 void Server::Listen()
 {
     char * buffer[1024]= {0};
-    if ((new_socket = accept(server_fd, (struct sockaddr *)&address,
-                             (socklen_t*)&addr_len)) < 0)
-    {
-        perror("accept");
-        exit(EXIT_FAILURE);
-    }
+    new_socket = accept(server_fd, (struct sockaddr *)&address,
+                             (socklen_t*)&addr_len);
 
     char* hello = "Hello from the server";
     val_read = read(new_socket , buffer, 1024);
@@ -127,6 +115,7 @@ TEST_F(SocketClientTest, SuccessfulConnection){
     server->CreateSocket();
     ASSERT_EQ(socket->Create(ip_address),0);
 }
+
 TEST_F(SocketClientTest, CommunicationWithServer){
     server->CreateSocket();
     std::thread th(&Server::Listen, server);//Thread to run the server
@@ -137,4 +126,21 @@ TEST_F(SocketClientTest, CommunicationWithServer){
     const char* msgFromServer = socket->GetBufferChar();
     ASSERT_STREQ(msgFromServer, "Hello from the server");
     th.join();
+}
+
+
+TEST_F(SocketClientTest, CheckTypeFromCharToString){
+    char * c = "char to string test";
+    string s;
+    ASSERT_TRUE(typeid(socket->CharToString(c,sizeof(c)))==typeid(s));
+
+}
+
+TEST_F(SocketClientTest, CorrectParsingFromCharToString){
+    char * char_msg = "char to string test";
+    string s_msg = socket->CharToString(char_msg, strlen(char_msg));
+    int n = s_msg.length();
+    char char_array[n+1];
+    strcpy(char_array, s_msg.c_str());
+    ASSERT_STREQ(char_array, "char to string test");
 }

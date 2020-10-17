@@ -38,6 +38,8 @@ public:
     string handleMessage(vector<string> message);
 
     char *getPBuffer() const;
+
+    VertexList *getPGraph() const;
 };
 
 

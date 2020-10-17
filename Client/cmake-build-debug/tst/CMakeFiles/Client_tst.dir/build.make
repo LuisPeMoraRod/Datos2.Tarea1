@@ -77,42 +77,42 @@ include tst/CMakeFiles/Client_tst.dir/progress.make
 # Include the compile flags for this target's objects.
 include tst/CMakeFiles/Client_tst.dir/flags.make
 
-tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: tst/CMakeFiles/Client_tst.dir/flags.make
-tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o: ../tst/SocketClientTest.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o"
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp"
+tst/CMakeFiles/Client_tst.dir/SocketClientTest.o: tst/CMakeFiles/Client_tst.dir/flags.make
+tst/CMakeFiles/Client_tst.dir/SocketClientTest.o: ../tst/SocketClientTest.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object tst/CMakeFiles/Client_tst.dir/SocketClientTest.o"
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client_tst.dir/SocketClientTest.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp"
 
-tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client_tst.dir/SocketClientTest.cpp.i"
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp" > CMakeFiles/Client_tst.dir/SocketClientTest.cpp.i
+tst/CMakeFiles/Client_tst.dir/SocketClientTest.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client_tst.dir/SocketClientTest.i"
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp" > CMakeFiles/Client_tst.dir/SocketClientTest.i
 
-tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client_tst.dir/SocketClientTest.cpp.s"
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp" -o CMakeFiles/Client_tst.dir/SocketClientTest.cpp.s
+tst/CMakeFiles/Client_tst.dir/SocketClientTest.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client_tst.dir/SocketClientTest.s"
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp" -o CMakeFiles/Client_tst.dir/SocketClientTest.s
 
-tst/CMakeFiles/Client_tst.dir/main.cpp.o: tst/CMakeFiles/Client_tst.dir/flags.make
-tst/CMakeFiles/Client_tst.dir/main.cpp.o: ../tst/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tst/CMakeFiles/Client_tst.dir/main.cpp.o"
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client_tst.dir/main.cpp.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp"
+tst/CMakeFiles/Client_tst.dir/main.o: tst/CMakeFiles/Client_tst.dir/flags.make
+tst/CMakeFiles/Client_tst.dir/main.o: ../tst/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object tst/CMakeFiles/Client_tst.dir/main.o"
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Client_tst.dir/main.o -c "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp"
 
-tst/CMakeFiles/Client_tst.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client_tst.dir/main.cpp.i"
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp" > CMakeFiles/Client_tst.dir/main.cpp.i
+tst/CMakeFiles/Client_tst.dir/main.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Client_tst.dir/main.i"
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp" > CMakeFiles/Client_tst.dir/main.i
 
-tst/CMakeFiles/Client_tst.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client_tst.dir/main.cpp.s"
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp" -o CMakeFiles/Client_tst.dir/main.cpp.s
+tst/CMakeFiles/Client_tst.dir/main.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Client_tst.dir/main.s"
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug/tst" && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/main.cpp" -o CMakeFiles/Client_tst.dir/main.s
 
 # Object files for target Client_tst
 Client_tst_OBJECTS = \
-"CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o" \
-"CMakeFiles/Client_tst.dir/main.cpp.o"
+"CMakeFiles/Client_tst.dir/SocketClientTest.o" \
+"CMakeFiles/Client_tst.dir/main.o"
 
 # External object files for target Client_tst
 Client_tst_EXTERNAL_OBJECTS =
 
-tst/Client_tst: tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o
-tst/Client_tst: tst/CMakeFiles/Client_tst.dir/main.cpp.o
+tst/Client_tst: tst/CMakeFiles/Client_tst.dir/SocketClientTest.o
+tst/Client_tst: tst/CMakeFiles/Client_tst.dir/main.o
 tst/Client_tst: tst/CMakeFiles/Client_tst.dir/build.make
 tst/Client_tst: src/libClient_lib.a
 tst/Client_tst: lib/libgtestd.a

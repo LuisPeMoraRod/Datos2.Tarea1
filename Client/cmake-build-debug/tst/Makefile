@@ -191,59 +191,35 @@ Client_tst/fast:
 	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/build
 .PHONY : Client_tst/fast
 
-SocketClientTest.o: SocketClientTest.cpp.o
-
+# target to build an object file
+SocketClientTest.o:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.o
 .PHONY : SocketClientTest.o
 
-# target to build an object file
-SocketClientTest.cpp.o:
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.o
-.PHONY : SocketClientTest.cpp.o
-
-SocketClientTest.i: SocketClientTest.cpp.i
-
+# target to preprocess a source file
+SocketClientTest.i:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.i
 .PHONY : SocketClientTest.i
 
-# target to preprocess a source file
-SocketClientTest.cpp.i:
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.i
-.PHONY : SocketClientTest.cpp.i
-
-SocketClientTest.s: SocketClientTest.cpp.s
-
+# target to generate assembly for a file
+SocketClientTest.s:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.s
 .PHONY : SocketClientTest.s
 
-# target to generate assembly for a file
-SocketClientTest.cpp.s:
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/SocketClientTest.cpp.s
-.PHONY : SocketClientTest.cpp.s
-
-main.o: main.cpp.o
-
+# target to build an object file
+main.o:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.o
 .PHONY : main.o
 
-# target to build an object file
-main.cpp.o:
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
+# target to preprocess a source file
+main.i:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.i
 .PHONY : main.i
 
-# target to preprocess a source file
-main.cpp.i:
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
 # target to generate assembly for a file
-main.cpp.s:
-	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.cpp.s
-.PHONY : main.cpp.s
+main.s:
+	cd "/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug" && $(MAKE) $(MAKESILENT) -f tst/CMakeFiles/Client_tst.dir/build.make tst/CMakeFiles/Client_tst.dir/main.s
+.PHONY : main.s
 
 # Help Target
 help:

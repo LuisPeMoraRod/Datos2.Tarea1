@@ -22,7 +22,7 @@ private:
     char buffer[2048];
     char* message;
     const char* ip_address;
-    string CharToString(char *c, int size);
+
 
 public:
     SocketClient();
@@ -32,5 +32,6 @@ public:
     string GetBuffer();
     const char* GetBufferChar();
     int GetState() const;
+    string CharToString(char *c, int size);
 };
 
