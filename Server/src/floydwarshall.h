@@ -14,7 +14,7 @@ private:
     int **distMatrix;
     string **pathsMatrix;
     VertexList * pGraph;
-
+public:
     void setDiag(int **matrix);
     void setDiag(string **matrix);
 
@@ -27,7 +27,7 @@ private:
 
     string **getPathsMatrix() const;
 
-public:
+
     FloydWarshall(VertexList *pGraph);
 
     ~FloydWarshall();

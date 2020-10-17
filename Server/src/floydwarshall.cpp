@@ -186,7 +186,7 @@ string FloydWarshall::getMatrices() {
             }
         }
         message.append(":");
-    }
+   }
     string *pMsg = &message;
     string **ppMsg = &pMsg;
     message.append(getGraphRepresentation(ppMsg));
