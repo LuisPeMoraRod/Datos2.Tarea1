@@ -1,0 +1,1 @@
+/usr/bin/c++  --coverage -g   CMakeFiles/Client_run.dir/main.cpp.o CMakeFiles/Client_run.dir/socketclient.cpp.o CMakeFiles/Client_run.dir/window.cpp.o  -o Client_run  /usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.12.8 /usr/lib/x86_64-linux-gnu/libQt5Core.so.5.12.8 

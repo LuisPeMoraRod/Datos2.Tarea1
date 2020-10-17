@@ -1,0 +1,360 @@
+        -:    0:Source:/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/tst/SocketClientTest.cpp
+        -:    0:Graph:/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug-coverage/tst/CMakeFiles/Client_tst.dir/SocketClientTest.gcno
+        -:    0:Data:/home/luispedro/Documents/TEC/Semestre III/Algoritmos y Estructuras de Datos 2/Tarea 1/Client/cmake-build-debug-coverage/tst/CMakeFiles/Client_tst.dir/SocketClientTest.gcda
+        -:    0:Runs:1
+        -:    1://
+        -:    2:// Created by Luis Pedro Morales on 14/10/20.
+        -:    3://
+        -:    4:
+        -:    5:#include "socketclient.h"
+        -:    6:#include "gtest/gtest.h"
+        -:    7:#include <unistd.h>
+        -:    8:#include <stdio.h>
+        -:    9:#include <sys/socket.h>
+        -:   10:#include <stdlib.h>
+        -:   11:#include <netinet/in.h>
+        -:   12:#include <string.h>
+        -:   13:#include "string"
+        -:   14:#define PORT 8080
+        -:   15:#include <thread>
+        -:   16:
+        -:   17:/*!
+        -:   18: * Class that creates server side using socket
+        -:   19: */
+        -:   20:class Server {
+        -:   21:private:
+        -:   22:    int server_fd, new_socket, val_read, opt, addr_len;
+        -:   23:    struct sockaddr_in address;
+        -:   24:    thread th;
+        -:   25:
+        -:   26:public:
+        -:   27:    Server();
+        -:   28:    ~Server();
+        -:   29:    int CreateSocket();
+        -:   30:    void Listen();
+        -:   31:};
+        6:   32:Server::Server() {
+        6:   32-block  0
+        6:   33:    this->opt = 1;
+        6:   34:    this->addr_len = sizeof(address);
+        6:   35:}
+        -:   36:
+    #####:   37:Server::~Server() {
+    %%%%%:   37-block  0
+    #####:   38:    delete this;
+    %%%%%:   38-block  0
+    %%%%%:   38-block  1
+    #####:   39:}
+        -:   40:
+        -:   41:
+        -:   42:/*!
+        -:   43: * Attempts to create socket attaching it to port 8080. Returns 0 in case of success
+        -:   44: * @return int
+        -:   45: */
+        2:   46:int Server::CreateSocket() {
+        -:   47:    // Creating socket file descriptor
+        2:   48:    if ((server_fd = socket(AF_INET, SOCK_STREAM, 0)) == 0)
+        2:   48-block  0
+        -:   49:    {
+        -:   50:    }
+        -:   51:
+        -:   52:    // Forcefully attaching socket to the port 8080
+        2:   53:    if (setsockopt(server_fd, SOL_SOCKET, SO_REUSEADDR | SO_REUSEPORT,
+        2:   54:                   &opt, sizeof(opt)))
+        2:   54-block  0
+        -:   55:    {
+        -:   56:    }
+        2:   57:    address.sin_family = AF_INET;
+        2:   58:    address.sin_addr.s_addr = INADDR_ANY;
+        2:   59:    address.sin_port = htons( PORT );
+        -:   60:
+        -:   61:    // Forcefully attaching socket to the port 8080
+        2:   62:    if (bind(server_fd, (struct sockaddr *)&address,
+        2:   62-block  0
+        2:   63:             sizeof(address))<0)
+        -:   64:    {
+        -:   65:    }
+        2:   66:    if (listen(server_fd, 3) < 0)
+        2:   66-block  0
+        -:   67:    {
+        -:   68:    }
+        -:   69:
+        -:   70:
+        2:   71:    return 0;
+        2:   71-block  0
+        -:   72:}
+        -:   73:
+        -:   74:/*!
+        -:   75: * Reads message from the client and sends a response message.
+        -:   76: * @return 0
+        -:   77: */
+        1:   78:void Server::Listen()
+        -:   79:{
+        1:   80:    char * buffer[1024]= {0};
+        2:   81:    new_socket = accept(server_fd, (struct sockaddr *)&address,
+        1:   82:                             (socklen_t*)&addr_len);
+        1:   82-block  0
+        -:   83:
+        1:   84:    char* hello = "Hello from the server";
+        1:   85:    val_read = read(new_socket , buffer, 1024);
+        1:   85-block  0
+        1:   86:    send(new_socket , hello , strlen(hello) , 0 );
+        1:   86-block  0
+        1:   87:}
+        1:   87-block  0
+        -:   88:
+        -:   89:
+        -:   90:class SocketClientTest : public ::testing::Test{
+        -:   91:protected:
+        -:   92:    Server* server;
+        -:   93:    SocketClient * socket;
+        -:   94:    const char * ip_address;
+        6:   95:    void SetUp() override{
+        6:   96:        server = new Server();
+        6:   96-block  0
+    $$$$$:   96-block  1
+        6:   97:        socket = new SocketClient();
+        6:   97-block  0
+    $$$$$:   97-block  1
+        6:   98:        ip_address = "127.0.0.1";
+        6:   99:    }
+        6:   99-block  0
+        6:  100:    void TearDown() override{
+        6:  101:    }
+        -:  102:
+        -:  103:};
+        -:  104:
+        4:  105:TEST_F(SocketClientTest, ServerNotRunning){
+       1*:  106:    ASSERT_EQ(socket->Create(ip_address),-2);
+        -:  107:}
+------------------
+_ZN38SocketClientTest_ServerNotRunning_TestC2Ev:
+        1:  105:TEST_F(SocketClientTest, ServerNotRunning){
+        1:  105-block  0
+------------------
+_ZN38SocketClientTest_ServerNotRunning_TestD0Ev:
+        1:  105:TEST_F(SocketClientTest, ServerNotRunning){
+        1:  105-block  0
+------------------
+_ZN38SocketClientTest_ServerNotRunning_TestD2Ev:
+        1:  105:TEST_F(SocketClientTest, ServerNotRunning){
+        1:  105-block  0
+------------------
+_ZN38SocketClientTest_ServerNotRunning_Test8TestBodyEv:
+        1:  105:TEST_F(SocketClientTest, ServerNotRunning){
+       1*:  106:    ASSERT_EQ(socket->Create(ip_address),-2);
+        1:  106-block  0
+        1:  106-block  1
+        1:  106-block  2
+    %%%%%:  106-block  3
+    %%%%%:  106-block  4
+    %%%%%:  106-block  5
+    %%%%%:  106-block  6
+    $$$$$:  106-block  7
+    $$$$$:  106-block  8
+    $$$$$:  106-block  9
+    $$$$$:  106-block 10
+    $$$$$:  106-block 11
+    $$$$$:  106-block 12
+    $$$$$:  106-block 13
+        -:  107:}
+------------------
+        -:  108:
+        4:  109:TEST_F(SocketClientTest, HandleInvalidIp){
+       1*:  110:    ASSERT_EQ(socket->Create("address"),-1);
+       1*:  111:    ASSERT_EQ(socket->Create("127.0.0"),-1);
+        -:  112:}
+------------------
+_ZN37SocketClientTest_HandleInvalidIp_TestC2Ev:
+        1:  109:TEST_F(SocketClientTest, HandleInvalidIp){
+        1:  109-block  0
+------------------
+_ZN37SocketClientTest_HandleInvalidIp_TestD0Ev:
+        1:  109:TEST_F(SocketClientTest, HandleInvalidIp){
+        1:  109-block  0
+------------------
+_ZN37SocketClientTest_HandleInvalidIp_TestD2Ev:
+        1:  109:TEST_F(SocketClientTest, HandleInvalidIp){
+        1:  109-block  0
+------------------
+_ZN37SocketClientTest_HandleInvalidIp_Test8TestBodyEv:
+        1:  109:TEST_F(SocketClientTest, HandleInvalidIp){
+       1*:  110:    ASSERT_EQ(socket->Create("address"),-1);
+        1:  110-block  0
+        1:  110-block  1
+        1:  110-block  2
+    %%%%%:  110-block  3
+    %%%%%:  110-block  4
+    %%%%%:  110-block  5
+    %%%%%:  110-block  6
+    $$$$$:  110-block  7
+    $$$$$:  110-block  8
+    $$$$$:  110-block  9
+    $$$$$:  110-block 10
+    $$$$$:  110-block 11
+    $$$$$:  110-block 12
+    $$$$$:  110-block 13
+       1*:  111:    ASSERT_EQ(socket->Create("127.0.0"),-1);
+        1:  111-block  0
+        1:  111-block  1
+        1:  111-block  2
+    %%%%%:  111-block  3
+    %%%%%:  111-block  4
+    %%%%%:  111-block  5
+    %%%%%:  111-block  6
+    $$$$$:  111-block  7
+    $$$$$:  111-block  8
+    $$$$$:  111-block  9
+    $$$$$:  111-block 10
+    $$$$$:  111-block 11
+    $$$$$:  111-block 12
+    $$$$$:  111-block 13
+        -:  112:}
+------------------
+        -:  113:
+        4:  114:TEST_F(SocketClientTest, SuccessfulConnection){
+        1:  115:    server->CreateSocket();
+       1*:  116:    ASSERT_EQ(socket->Create(ip_address),0);
+        -:  117:}
+------------------
+_ZN42SocketClientTest_SuccessfulConnection_TestC2Ev:
+        1:  114:TEST_F(SocketClientTest, SuccessfulConnection){
+        1:  114-block  0
+------------------
+_ZN42SocketClientTest_SuccessfulConnection_TestD0Ev:
+        1:  114:TEST_F(SocketClientTest, SuccessfulConnection){
+        1:  114-block  0
+------------------
+_ZN42SocketClientTest_SuccessfulConnection_TestD2Ev:
+        1:  114:TEST_F(SocketClientTest, SuccessfulConnection){
+        1:  114-block  0
+------------------
+_ZN42SocketClientTest_SuccessfulConnection_Test8TestBodyEv:
+        1:  114:TEST_F(SocketClientTest, SuccessfulConnection){
+        1:  115:    server->CreateSocket();
+        1:  115-block  0
+       1*:  116:    ASSERT_EQ(socket->Create(ip_address),0);
+        1:  116-block  0
+        1:  116-block  1
+    %%%%%:  116-block  2
+    %%%%%:  116-block  3
+    %%%%%:  116-block  4
+    %%%%%:  116-block  5
+    $$$$$:  116-block  6
+    $$$$$:  116-block  7
+    $$$$$:  116-block  8
+    $$$$$:  116-block  9
+    $$$$$:  116-block 10
+    $$$$$:  116-block 11
+    $$$$$:  116-block 12
+        -:  117:}
+------------------
+        -:  118:
+        4:  119:TEST_F(SocketClientTest, CommunicationWithServer){
+        1:  120:    server->CreateSocket();
+        1:  121:    std::thread th(&Server::Listen, server);//Thread to run the server
+        1:  122:    socket->Create(ip_address);
+        1:  123:    char * pMessage = "Testing hello from client";
+        1:  124:    char** ppMessage = &pMessage;
+        1:  125:    socket->SendBuffer(ppMessage);
+        1:  126:    const char* msgFromServer = socket->GetBufferChar();
+       1*:  127:    ASSERT_STREQ(msgFromServer, "Hello from the server");
+        1:  128:    th.join();
+        -:  129:}
+------------------
+_ZN45SocketClientTest_CommunicationWithServer_TestC2Ev:
+        1:  119:TEST_F(SocketClientTest, CommunicationWithServer){
+        1:  119-block  0
+------------------
+_ZN45SocketClientTest_CommunicationWithServer_TestD0Ev:
+        1:  119:TEST_F(SocketClientTest, CommunicationWithServer){
+        1:  119-block  0
+------------------
+_ZN45SocketClientTest_CommunicationWithServer_TestD2Ev:
+        1:  119:TEST_F(SocketClientTest, CommunicationWithServer){
+        1:  119-block  0
+------------------
+_ZN45SocketClientTest_CommunicationWithServer_Test8TestBodyEv:
+        1:  119:TEST_F(SocketClientTest, CommunicationWithServer){
+        1:  120:    server->CreateSocket();
+        1:  120-block  0
+        1:  121:    std::thread th(&Server::Listen, server);//Thread to run the server
+        1:  121-block  0
+    $$$$$:  121-block  1
+    $$$$$:  121-block  2
+        1:  122:    socket->Create(ip_address);
+        1:  122-block  0
+        1:  123:    char * pMessage = "Testing hello from client";
+        1:  124:    char** ppMessage = &pMessage;
+        1:  125:    socket->SendBuffer(ppMessage);
+        1:  125-block  0
+        1:  126:    const char* msgFromServer = socket->GetBufferChar();
+        1:  126-block  0
+       1*:  127:    ASSERT_STREQ(msgFromServer, "Hello from the server");
+        1:  127-block  0
+        1:  127-block  1
+    %%%%%:  127-block  2
+    %%%%%:  127-block  3
+    %%%%%:  127-block  4
+    %%%%%:  127-block  5
+    $$$$$:  127-block  6
+    $$$$$:  127-block  7
+    $$$$$:  127-block  8
+    $$$$$:  127-block  9
+    $$$$$:  127-block 10
+        1:  128:    th.join();
+        1:  128-block  0
+        -:  129:}
+------------------
+        -:  130:
+        -:  131:
+        4:  132:TEST_F(SocketClientTest, CheckTypeFromCharToString){
+        1:  133:    char * c = "char to string test";
+        1:  134:    string s;
+       1*:  135:    ASSERT_TRUE(typeid(socket->CharToString(c,sizeof(c)))==typeid(s));
+        -:  136:
+        -:  137:}
+------------------
+_ZN47SocketClientTest_CheckTypeFromCharToString_TestC2Ev:
+        1:  132:TEST_F(SocketClientTest, CheckTypeFromCharToString){
+        1:  132-block  0
+------------------
+_ZN47SocketClientTest_CheckTypeFromCharToString_TestD0Ev:
+        1:  132:TEST_F(SocketClientTest, CheckTypeFromCharToString){
+        1:  132-block  0
+------------------
+_ZN47SocketClientTest_CheckTypeFromCharToString_TestD2Ev:
+        1:  132:TEST_F(SocketClientTest, CheckTypeFromCharToString){
+        1:  132-block  0
+------------------
+_ZN47SocketClientTest_CheckTypeFromCharToString_Test8TestBodyEv:
+        1:  132:TEST_F(SocketClientTest, CheckTypeFromCharToString){
+        1:  133:    char * c = "char to string test";
+        1:  134:    string s;
+        1:  134-block  0
+    $$$$$:  134-block  1
+       1*:  135:    ASSERT_TRUE(typeid(socket->CharToString(c,sizeof(c)))==typeid(s));
+    %%%%%:  135-block  0
+    %%%%%:  135-block  1
+    %%%%%:  135-block  2
+    %%%%%:  135-block  3
+    %%%%%:  135-block  4
+    $$$$$:  135-block  5
+    $$$$$:  135-block  6
+    $$$$$:  135-block  7
+    $$$$$:  135-block  8
+    $$$$$:  135-block  9
+    $$$$$:  135-block 10
+    $$$$$:  135-block 11
+        -:  136:
+        -:  137:}
+------------------
+        -:  138:
+        4:  139:TEST_F(SocketClientTest, CorrectParsingFromCharToString){
+        1:  140:    char * char_msg = "char to string test";
+    #####:  141:    string s_msg = socket->CharToString(char_msg, strlen(char_msg));
+        1:  142:    int n = s_msg.length();
+        1:  143:    char char_array[n+1];
+        1:  144:    strcpy(char_array, s_msg.c_str());
+       2*:  145:    ASSERT_STREQ(char_array, "char to string test");
+        -:  146:}
